@@ -20,16 +20,24 @@
 }
 
 form {
+  display: flex;
   position: relative;
-  text-align: center;
+  justify-content: center;
+
   padding: 10px 0;
 }
 .search {
   width: 30%;
-  font-size: 24px;
+  height: 27px;
+  font-size: 16px;
+  padding: 0 10px;
   border-radius: 60px;
   border-color: #fefcf3;
   background-color: transparent;
+}
+::placeholder {
+  color: rgb(190, 186, 186);
+  font-style: italic;
 }
 .search-btn {
   border-color: none;
@@ -49,6 +57,7 @@ form {
 }
 
 .dropdown-btn {
+  min-width: 60px;
   background-color: #e1cbbf;
   padding: 15px 16px;
   border: none;
@@ -151,9 +160,13 @@ a {
   }
   .search {
     width: 45%;
-    font-size: 24px;
+    height: 27px;
+    font-size: 16px;
     border-radius: 60px;
     border-color: #fefcf3;
     background-color: transparent;
+  }
+  ::placeholder {
+    font-size: 12px;
   }
 }

@@ -67,7 +67,7 @@ function Navbar() {
       </div>
 
       <form>
-        <input className="search"></input>
+        <input placeholder="Search products" className="search"></input>
         <button className="search-btn" type="submit">
           <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685206701/doviee/icons/search-line_umfkmq.png" />
         </button>
