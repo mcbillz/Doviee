@@ -1,0 +1,93 @@
+body {
+  background: #f5ede6;
+  margin: 0;
+  font-family: "Ysabeau", sans-serif;
+  font-size: 24px;
+}
+.section1 {
+  padding: auto;
+  position: relative;
+}
+.sec1text {
+  text-align: center;
+  position: absolute;
+  top: 200px;
+  padding: 0 100px;
+}
+.sec1text h1 {
+  font-size: 5rem;
+}
+.sec1text p {
+  font-size: 2rem;
+}
+.section2 {
+  padding: auto;
+  position: relative;
+  top: 350px;
+  height: 950px;
+  clip-path: polygon(0% 0%, 30% 20%, 100% 0%, 100% 100%, 0% 100%);
+}
+@media screen and (max-width: 1300px) {
+  .sec1text {
+    text-align: center;
+    position: absolute;
+
+    padding: 0 100px;
+  }
+  .sec1text h1 {
+    font-size: 3rem;
+  }
+  .sec1text p {
+    font-size: 1rem;
+  }
+  .section2 {
+    padding: auto;
+    position: relative;
+    top: 180px;
+    height: 750px;
+    clip-path: polygon(0% 0%, 30% 10%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+@media screen and (max-width: 850px) {
+  .sec1text {
+    text-align: center;
+    position: absolute;
+    top: 100px;
+    padding: 0 100px;
+  }
+  .sec1text h1 {
+    font-size: 2rem;
+  }
+  .sec1text p {
+    font-size: 0.5rem;
+  }
+  .section2 {
+    padding: auto;
+    position: relative;
+    top: 0px;
+    height: 350px;
+    clip-path: polygon(0% 0%, 30% 10%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sec1text {
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    padding: 0 50px;
+  }
+  .sec1text h1 {
+    font-size: 1rem;
+  }
+  .sec1text p {
+    font-size: 0.5rem;
+  }
+  .section2 {
+    padding: auto;
+    position: relative;
+    top: -110px;
+    height: 220px;
+    clip-path: polygon(0% 0%, 30% 10%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}

@@ -1,0 +1,142 @@
+.nav {
+  background-color: #fefcf3;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 0;
+}
+.socials {
+  display: flex;
+  align-items: center;
+}
+.nav-logo {
+  width: 300px;
+  padding: 10px 0;
+}
+.nav-mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  position: relative;
+  text-align: center;
+  padding: 10px 0;
+}
+.search {
+  width: 30%;
+  font-size: 24px;
+  border-radius: 60px;
+  border-color: #fefcf3;
+  background-color: transparent;
+}
+.search-btn {
+  border-color: none;
+  background-color: transparent;
+  border-style: none;
+}
+.container {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #e1cbbf;
+  padding: 15px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fefcf3;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 16px;
+}
+
+.user-cart-div {
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+}
+.hamburger-menu {
+  display: none;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background: #e1cbbf;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 1100px) {
+  .nav-mid {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .none-mob {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .mob {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    justify-content: center;
+    gap: 20px;
+  }
+  .mob a {
+    margin: 0;
+  }
+  .mobsc {
+    margin: 30vh 0;
+  }
+  .nav-logo {
+    width: 150px;
+    padding: 10px 0;
+  }
+  .search {
+    width: 45%;
+    font-size: 24px;
+    border-radius: 60px;
+    border-color: #fefcf3;
+    background-color: transparent;
+  }
+}
