@@ -55,6 +55,12 @@ function Landingpage() {
           url=""
         />
       </div>
+      <div className="section5">
+        <div className="subscribe">
+          <input placeholder="Your E-mail" type="e-mail"></input>
+          <button type="submit">Subcribe</button>
+        </div>
+      </div>
     </div>
   );
 }
