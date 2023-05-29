@@ -17,3 +17,16 @@
 .slider-image.active {
   opacity: 1;
 }
+
+@media screen and (max-width: 1300px) {
+}
+@media screen and (max-width: 850px) {
+  .slider {
+    height: 400px; /* Adjust the height as needed */
+  }
+}
+@media screen and (max-width: 500px) {
+  .slider {
+    height: 320px; /* Adjust the height as needed */
+  }
+}
