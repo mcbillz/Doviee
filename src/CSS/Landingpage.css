@@ -157,6 +157,9 @@ body {
   .subscribe input {
     width: 300px;
   }
+  .subscribe button {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 500px) {
