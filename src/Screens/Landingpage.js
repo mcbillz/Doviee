@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import Slider from "../Components/Slider";
 import Card from "../Components/Card";
 import Banner from "../Components/Banner";
+import Footer from "../Components/Footer";
 import { femaleProducts, maleProducts } from "../Products";
 import { BrownBtn, BoarderBrownBtn } from "../Components/Btns";
 
@@ -60,6 +61,7 @@ function Landingpage() {
           <input placeholder="Your E-mail" type="e-mail"></input>
           <button type="submit">Subcribe</button>
         </div>
+        <Footer />
       </div>
     </div>
   );
