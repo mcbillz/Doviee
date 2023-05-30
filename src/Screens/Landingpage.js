@@ -15,8 +15,11 @@ function Landingpage() {
     }
     return array;
   }
-  const shuffledArray = shuffleArray(femaleProducts);
-  const randomItems = shuffledArray.slice(0, 3);
+  const shuffledFArray = shuffleArray(femaleProducts);
+  const randomFItems = shuffledFArray.slice(0, 3);
+
+  const shuffledMArray = shuffleArray(maleProducts);
+  const randomMItems = shuffledMArray.slice(0, 3);
   return (
     <div className="par">
       <Navbar />
@@ -35,11 +38,23 @@ function Landingpage() {
           <BrownBtn text="Shop" />
         </div>
       </div>
+      <div className="section1-5 section3">
+        {randomMItems.map((item) => (
+          <Card
+            key={item.id}
+            pPage={item.url}
+            pImg={item.src[0]}
+            pName={item.name}
+            pPrice={item.price}
+            oldPrice={item.oldPrice}
+          />
+        ))}
+      </div>
       <div className="section2">
-        <Slider gender="male" />s
+        <Slider gender="male" />
       </div>
       <div className="section3">
-        {randomItems.map((item) => (
+        {randomFItems.map((item) => (
           <Card
             key={item.id}
             pPage={item.url}

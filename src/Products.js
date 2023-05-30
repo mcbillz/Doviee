@@ -60,8 +60,7 @@ const maleProducts = [
   {
     id: "1",
     src: [
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
+      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459823/doviee/male/gregory-hayes-h5cd51KXmRQ-unsplash_hfu4zv.jpg",
     ],
     url: "",
     name: "Knit Sweater",
@@ -71,8 +70,7 @@ const maleProducts = [
   {
     id: "2",
     src: [
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
+      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459833/doviee/male/tyler-nix-BQrxXytYaHI-unsplash_kmrzmr.jpg",
     ],
     url: "",
     name: "Knit Sweater",
@@ -82,8 +80,7 @@ const maleProducts = [
   {
     id: "3",
     src: [
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
+      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459841/doviee/male/pascal-brauer-X1XAZZ284T4-unsplash_qhclzd.jpg",
     ],
     url: "",
     name: "Knit Sweater",
@@ -93,8 +90,7 @@ const maleProducts = [
   {
     id: "4",
     src: [
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
+      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459850/doviee/male/dami-adebayo-k6aQzmIbR1s-unsplash_qjs4sm.jpg",
     ],
     url: "",
     name: "Knit Sweater",
@@ -104,8 +100,7 @@ const maleProducts = [
   {
     id: "5",
     src: [
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
-      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
+      "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459869/doviee/male/raphael-nast-0nOcRsk_D-k-unsplash_uhszle.jpg",
     ],
     url: "",
     name: "Knit Sweater",

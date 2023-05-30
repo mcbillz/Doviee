@@ -1,9 +1,10 @@
 .slider {
+  position: relative;
   z-index: 1;
   display: block;
   justify-content: center;
   align-items: center;
-  height: 300px; /* Adjust the height as needed */
+  height: auto;
 }
 
 .slider-image {
@@ -16,17 +17,4 @@
 
 .slider-image.active {
   opacity: 1;
-}
-
-@media screen and (max-width: 1300px) {
-}
-@media screen and (max-width: 850px) {
-  .slider {
-    height: 400px; /* Adjust the height as needed */
-  }
-}
-@media screen and (max-width: 500px) {
-  .slider {
-    height: 320px; /* Adjust the height as needed */
-  }
 }

@@ -8,8 +8,8 @@ function Footer() {
       <div className="footer-div-1">
         <h1>Got Questions for us?</h1>
         <p>
-          "I've been using this marketplace for several months now and it's been
-          a game-changer for my business"
+          "I've been using this store for several months now and it's been a
+          game-changer for my shopping experience"
         </p>
         <button>Contact us</button>
       </div>
@@ -19,33 +19,13 @@ function Footer() {
           <p>Have discover your luxurious new home in the heart of the city</p>
         </div>
         <div>
-          <h5>Sell</h5>
-          <p>Sell now</p>
-          <p>Add Listings</p>
-          <p>Reviews</p>
-        </div>
-        <div>
-          <h5>Category</h5>
-          <p>
-            EUR-Pall A 12 Artikel 1010. Stl 1200 x 800. Virkestjocklek 22 mm.
-          </p>
-          <p>
-            EUR-Pall A 12 Artikel 1010. Stl 1200 x 800. Virkestjocklek 22 mm.
-          </p>
-          <p>
-            EUR-Pall A 12 Artikel 1010. Stl 1200 x 800. Virkestjocklek 22 mm.
-          </p>
-          <p>
-            EUR-Pall A 12 Artikel 1010. Stl 1200 x 800. Virkestjocklek 22 mm.
-          </p>
-          <p>
-            EUR-Pall A 12 Artikel 1010. Stl 1200 x 800. Virkestjocklek 22 mm.
-          </p>
-        </div>
-        <div>
-          <h5>Buy</h5>
-          <p>Buy Listing</p>
-          <p>Sell Listing</p>
+          <h5>Categories</h5>
+          <p>All</p>
+          <p>Men fashion</p>
+          <p>Women fashion</p>
+          <p>Sneakers</p>
+          <p>Assesories</p>
+          <p>Gift cards</p>
         </div>
         <div>
           <h5>Contact</h5>
@@ -56,7 +36,7 @@ function Footer() {
       </div>
       <hr />
       <div className="footer-div-3">
-        <p>&copy;{year} -Palletecos</p>
+        <p>&copy;{year} -Doviee & Co</p>
         <p>PrivacyPolicy - Terms & Conditions</p>
       </div>
     </div>

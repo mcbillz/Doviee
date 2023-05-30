@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 import "../CSS/Navbar.css";
 
 function Navbar() {
@@ -54,8 +55,7 @@ function Navbar() {
           <div class="dropdown">
             <button class="dropdown-btn">User</button>
             <div class="dropdown-content">
-              <a href="#">Sign Up</a>
-              <a href="#">Login</a>
+              <Link to="/Login">Login</Link>
             </div>
           </div>
           <div>
@@ -96,8 +96,7 @@ function Navbar() {
             <div class="dropdown">
               <button class="dropdown-btn">User</button>
               <div class="dropdown-content">
-                <a href="#">Sign Up</a>
-                <a href="#">Login</a>
+                <Link to="/Login">Login</Link>
               </div>
             </div>
             <div>
