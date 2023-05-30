@@ -10,7 +10,7 @@ function Navbar() {
     mobilenavStyle = {
       width: "50%",
       height: "100vh",
-      position: "absolute",
+      position: "fixed",
       top: "0px",
       right: "0",
       left: "0",

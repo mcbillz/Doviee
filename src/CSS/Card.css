@@ -9,6 +9,7 @@
   display: flex;
   height: 630px;
   justify-content: center;
+  overflow: hidden;
 }
 .card img {
   height: 100%;

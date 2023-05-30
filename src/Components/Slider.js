@@ -30,19 +30,17 @@ function Slider(props) {
   }, [images.length]);
 
   return (
-    <div className="">
-      <div className="slider">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Image ${index + 1}`}
-            className={`slider-image ${
-              index === currentImageIndex ? "active" : ""
-            }`}
-          />
-        ))}
-      </div>
+    <div className="slider">
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt={`Image ${index + 1}`}
+          className={`slider-image ${
+            index === currentImageIndex ? "active" : ""
+          }`}
+        />
+      ))}
     </div>
   );
 }
