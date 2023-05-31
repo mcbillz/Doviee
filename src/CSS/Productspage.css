@@ -1,0 +1,26 @@
+.cont {
+  background: #fefcf3;
+  width: 100vw;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.display-products {
+  position: relative;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+@media screen and (max-width: 850px) {
+  .display-products {
+    padding: 25px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex-basis: calc(20% - 10px);
+    justify-content: center;
+    align-items: center;
+  }
+}

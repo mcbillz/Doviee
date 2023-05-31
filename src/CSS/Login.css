@@ -65,6 +65,13 @@
 .aL {
   margin: 10px 0 0;
 }
+.ck {
+  background-color: #fefcf3;
+  border-style: none;
+}
+.ck:checked {
+  background-color: #846d61;
+}
 @media screen and (max-width: 1100px) {
   .login {
     background: #f5ede6;

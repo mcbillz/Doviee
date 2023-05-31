@@ -76,7 +76,7 @@ function Navbar() {
         <div class="dropdown">
           <button class="dropdown-btn">Categories</button>
           <div class="dropdown-content">
-            <a href="#">All</a>
+            <a href="/Productspage">All</a>
             <a href="#">Men fashion</a>
             <a href="#">Women fashion</a>
             <a href="#">Sneakers</a>

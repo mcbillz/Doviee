@@ -35,27 +35,45 @@ function Login() {
           </div>
 
           {toggle ? (
-            <form className="formL">
+            <form action="post" className="formL">
               <h2>Login</h2>
+              <input
+                name="formAction"
+                type="hidden"
+                value="login"
+                className="inputL"
+              ></input>
               <label className="labelL">Email</label>
-              <input className="inputL"></input>
+              <input name="email" className="inputL"></input>
               <label className="labelL">Password</label>
-              <input className="inputL"></input>
-              <checkbox></checkbox>
-              <p className="pL">Remember me</p>
-              <button className="buttonL">Login</button>
-              <a className="aL">
-                <p className="pL">Forgot your Password</p>
+              <input name="password" className="inputL"></input>
+              <p className="pL">
+                <input name="remember" type="checkbox" className="ck" />{" "}
+                Remember me
+              </p>
+              <button type="submit" className="buttonL">
+                Login
+              </button>
+              <a href="" className="aL">
+                <p className="pL">Forgot Password?</p>
               </a>
             </form>
           ) : (
             <form className="formL">
               <h2>Sign up</h2>
+              <input
+                name="formAction"
+                type="hidden"
+                value="Sign up"
+                className="inputL"
+              ></input>
               <label className="labelL">Email</label>
-              <input className="inputL"></input>
+              <input name="email" className="inputL"></input>
               <label className="labelL">Password</label>
-              <input className="inputL"></input>
-              <button className="buttonL">Sign up</button>
+              <input name="password" className="inputL"></input>
+              <button type="submit" className="buttonL">
+                Sign up
+              </button>
             </form>
           )}
         </div>
