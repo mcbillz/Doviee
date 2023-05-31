@@ -4,7 +4,7 @@ import Slider from "../Components/Slider";
 import Card from "../Components/Card";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
-import { femaleProducts, maleProducts } from "../Products";
+import Products from "../Products";
 import { BrownBtn, BoarderBrownBtn } from "../Components/Btns";
 
 function Landingpage() {
@@ -15,6 +15,14 @@ function Landingpage() {
     }
     return array;
   }
+
+  const femaleProducts = Products.filter(
+    (product) => product.category === "femaleProducts"
+  );
+  const maleProducts = Products.filter(
+    (product) => product.category === "maleProducts"
+  );
+
   const shuffledFArray = shuffleArray(femaleProducts);
   const randomFItems = shuffledFArray.slice(0, 4);
 

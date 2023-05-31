@@ -13,6 +13,20 @@
   gap: 30px;
   justify-content: center;
 }
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.pagination li {
+  padding: 0 10px;
+  list-style-type: none;
+  cursor: pointer;
+}
+.active-page {
+  font-weight: bold;
+}
 @media screen and (max-width: 850px) {
   .display-products {
     padding: 25px 0;
