@@ -3,7 +3,13 @@ import "../CSS/Productspage.css";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Card from "../Components/Card";
-import { femaleProducts, maleProducts } from "../Products";
+import {
+  femaleProducts,
+  maleProducts,
+  Sneakers,
+  Assesories,
+  giftCards,
+} from "../Products";
 
 function Productspage() {
   function shuffleArray(array) {
@@ -13,7 +19,10 @@ function Productspage() {
     }
     return array;
   }
-  const productsTotal = femaleProducts.concat(maleProducts);
+  const productsTotal = femaleProducts
+    .concat(maleProducts)
+    .concat(Sneakers)
+    .concat(Assesories);
   const productsArray = shuffleArray(productsTotal);
   return (
     <div className="cont">
