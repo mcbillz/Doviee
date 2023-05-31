@@ -1,13 +1,66 @@
+import { React, useState } from "react";
 import "../CSS/Login.css";
 import Footer from "../Components/Footer";
 
 function Login() {
+  var signUpStyle = { color: "", background: "" };
+  var loginStyle = { color: "", background: "" };
+
+  const [toggle, setToggle] = useState(true);
+  if (toggle === true) {
+    signUpStyle = { color: "#846d61", background: "#f5ede6" };
+    loginStyle = { color: "#e1cbbf", background: "#846d61" };
+  } else {
+    loginStyle = { color: "#846d61", background: "#f5ede6" };
+    signUpStyle = { color: "#e1cbbf", background: "#846d61" };
+  }
+
+  function handleSignUpClick() {
+    setToggle(false);
+  }
+  function handleLoginClick() {
+    setToggle(true);
+  }
   return (
     <div className="Cont">
       <div className="login">
-        <div className="infos"></div>
+        <div className="infos">
+          <div className="info-btn">
+            <button onClick={handleSignUpClick} style={signUpStyle}>
+              Sign up
+            </button>
+            <button onClick={handleLoginClick} style={loginStyle}>
+              Login
+            </button>
+          </div>
+
+          {toggle ? (
+            <form className="formL">
+              <h2>Login</h2>
+              <label className="labelL">Email</label>
+              <input className="inputL"></input>
+              <label className="labelL">Password</label>
+              <input className="inputL"></input>
+              <checkbox></checkbox>
+              <p className="pL">Remember me</p>
+              <button className="buttonL">Login</button>
+              <a className="aL">
+                <p className="pL">Forgot your Password</p>
+              </a>
+            </form>
+          ) : (
+            <form className="formL">
+              <h2>Sign up</h2>
+              <label className="labelL">Email</label>
+              <input className="inputL"></input>
+              <label className="labelL">Password</label>
+              <input className="inputL"></input>
+              <button className="buttonL">Sign up</button>
+            </form>
+          )}
+        </div>
         <div className="imgD">
-          <img src="" />
+          <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685485471/doviee/tamara-bellis-cvfHyRTBepA-unsplash_xc7t8q.jpg" />
         </div>
       </div>
       <Footer />

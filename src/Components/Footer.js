@@ -16,7 +16,10 @@ function Footer() {
       <div className="footer-list">
         <div className="footer-list-a">
           <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685205592/doviee/doviee_wu9jrs.png" />
-          <p>Have discover your luxurious new home in the heart of the city</p>
+          <p>
+            Take a different approach to shopping and enjoy and experience to
+            die for.
+          </p>
         </div>
         <div>
           <h5>Categories</h5>

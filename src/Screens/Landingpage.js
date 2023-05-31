@@ -16,10 +16,10 @@ function Landingpage() {
     return array;
   }
   const shuffledFArray = shuffleArray(femaleProducts);
-  const randomFItems = shuffledFArray.slice(0, 3);
+  const randomFItems = shuffledFArray.slice(0, 4);
 
   const shuffledMArray = shuffleArray(maleProducts);
-  const randomMItems = shuffledMArray.slice(0, 3);
+  const randomMItems = shuffledMArray.slice(0, 4);
   return (
     <div className="par">
       <Navbar />

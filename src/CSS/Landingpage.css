@@ -40,6 +40,7 @@ body {
   padding: 50px 30px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   flex-basis: calc(33.33% - 10px);
   gap: 30px;
   justify-content: center;
@@ -114,13 +115,14 @@ body {
   .section2 {
     padding: auto;
     position: relative;
-    height: 750px;
+    height: 70vw;
     clip-path: polygon(0% 0%, 30% 10%, 100% 0%, 100% 100%, 0% 100%);
   }
   .section3 {
     padding: 50px 0;
-    flex-direction: column;
-    flex-basis: calc(0% - 10px);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
     justify-content: center;
     align-items: center;
   }
@@ -154,8 +156,10 @@ body {
   }
   .section3 {
     padding: 25px 0;
-    flex-direction: column;
-    flex-basis: calc(0% - 10px);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex-basis: calc(20% - 10px);
     justify-content: center;
     align-items: center;
   }
@@ -191,8 +195,9 @@ body {
   }
   .section3 {
     padding: 30px 0;
-    flex-direction: column;
-    flex-basis: calc(0% - 10px);
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: calc(50% - 10px);
     justify-content: center;
     align-items: center;
   }
