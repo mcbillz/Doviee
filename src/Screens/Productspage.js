@@ -65,7 +65,7 @@ function Productspage() {
           currentItems.map((item, index) => (
             <Card
               key={item.id}
-              pPage={item.url}
+              pPage={`/Productspage/${item.id}`}
               pImg={item.src[0]}
               pName={item.name}
               pPrice={item.price}

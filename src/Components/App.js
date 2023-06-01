@@ -7,6 +7,8 @@ import Assesories from "../Screens/Assesories";
 import FemaleFashion from "../Screens/FemaleFashion";
 import MaleFashion from "../Screens/MaleFashion";
 import Sneakers from "../Screens/Sneakers";
+import SingleProductPage from "../Screens/SingleProductPage";
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,10 @@ function App() {
         <Route path="/FemaleFashion" element={<FemaleFashion />} />
         <Route path="/MaleFashion" element={<MaleFashion />} />
         <Route path="/Sneakers" element={<Sneakers />} />
+        <Route
+          path="/Productspage/:productId"
+          element={<SingleProductPage />}
+        />
       </Routes>
     </BrowserRouter>
   );
