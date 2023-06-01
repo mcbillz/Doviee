@@ -7,9 +7,9 @@ import Card from "../Components/Card";
 import Products from "../Products";
 import Error from "../Components/Error";
 
-function FemaleFashion() {
-  const femaleProducts = Products.filter((product) =>
-    product.category.includes("femaleProducts")
+function Assesories() {
+  const assesoriesProducts = Products.filter((product) =>
+    product.category.includes("assesories")
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -19,13 +19,13 @@ function FemaleFashion() {
     setSearchQuery(query);
 
     // Perform the search logic here
-    const filteredResults = femaleProducts.filter((item) =>
+    const filteredResults = assesoriesProducts.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     );
     setSearchResults(filteredResults);
   };
 
-  const productsArray = searchQuery === "" ? femaleProducts : searchResults;
+  const productsArray = searchQuery === "" ? assesoriesProducts : searchResults;
   // PAGINATION
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(0);
@@ -95,4 +95,4 @@ function FemaleFashion() {
   );
 }
 
-export default FemaleFashion;
+export default Assesories;

@@ -5,16 +5,24 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Card from "../Components/Card";
 import Products from "../Products";
+import Error from "../Components/Error";
 
 function Productspage() {
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-  const productsArray = Products;
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearchInput = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+
+    // Perform the search logic here
+    const filteredResults = Products.filter((item) =>
+      item.name.toLowerCase().includes(query.toLowerCase())
+    );
+    setSearchResults(filteredResults);
+  };
+
+  const productsArray = searchQuery === "" ? Products : searchResults;
   // PAGINATION
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(0);
@@ -38,17 +46,33 @@ function Productspage() {
   return (
     <div className="cont">
       <Navbar />
+      <form>
+        <input
+          style={{ borderColor: "#e1cbbf" }}
+          placeholder="Search products"
+          className="search"
+          value={searchQuery}
+          onChange={handleSearchInput}
+        ></input>
+        <button disabled className="search-btn">
+          <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685206701/doviee/icons/search-line_umfkmq.png" />
+        </button>
+      </form>
       <div className="display-products">
-        {currentItems.map((item, index) => (
-          <Card
-            key={item.id}
-            pPage={item.url}
-            pImg={item.src[0]}
-            pName={item.name}
-            pPrice={item.price}
-            oldPrice={item.oldPrice}
-          />
-        ))}
+        {currentItems.length === 0 ? (
+          <Error errorMessage="Sorry! no products found" />
+        ) : (
+          currentItems.map((item, index) => (
+            <Card
+              key={item.id}
+              pPage={item.url}
+              pImg={item.src[0]}
+              pName={item.name}
+              pPrice={item.price}
+              oldPrice={item.oldPrice}
+            />
+          ))
+        )}
       </div>
       {/* Render pagination component */}
       <ReactPaginate

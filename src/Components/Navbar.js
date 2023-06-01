@@ -2,9 +2,10 @@ import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import "../CSS/Navbar.css";
 
-function Navbar() {
+function Navbar(props) {
   const [toggle, setToggle] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
+
   let mobilenavStyle = {};
   if (toggle === true) {
     mobilenavStyle = {
@@ -41,10 +42,13 @@ function Navbar() {
           </a>
         </div>
         <div className="nav-mid">
-          <img
-            className="nav-logo"
-            src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685205592/doviee/doviee_wu9jrs.png"
-          />
+          <a href="/">
+            <img
+              className="nav-logo"
+              src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685205592/doviee/doviee_wu9jrs.png"
+            />
+          </a>
+
           <div className="hamburger-menu" onClick={() => setToggle(!toggle)}>
             <div className="line"></div>
             <div className="line"></div>
@@ -66,21 +70,15 @@ function Navbar() {
         </div>
       </div>
 
-      <form>
-        <input placeholder="Search products" className="search"></input>
-        <button className="search-btn" type="submit">
-          <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685206701/doviee/icons/search-line_umfkmq.png" />
-        </button>
-      </form>
       <div class="container">
         <div class="dropdown">
           <button class="dropdown-btn">Categories</button>
           <div class="dropdown-content">
             <a href="/Productspage">All</a>
-            <a href="#">Men fashion</a>
-            <a href="#">Women fashion</a>
-            <a href="#">Sneakers</a>
-            <a href="#">Assesories</a>
+            <a href="/MaleFashion">Men fashion</a>
+            <a href="/FemaleFashion">Women fashion</a>
+            <a href="/Sneakers">Sneakers</a>
+            <a href="/assesories">Assesories</a>
             <a href="#">Gift cards</a>
           </div>
         </div>

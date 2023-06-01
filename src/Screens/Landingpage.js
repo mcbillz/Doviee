@@ -1,3 +1,4 @@
+import React from "react";
 import "../CSS/Landingpage.css";
 import Navbar from "../Components/Navbar";
 import Slider from "../Components/Slider";
@@ -16,11 +17,11 @@ function Landingpage() {
     return array;
   }
 
-  const femaleProducts = Products.filter(
-    (product) => product.category === "femaleProducts"
+  const femaleProducts = Products.filter((product) =>
+    product.category.includes("femaleProducts")
   );
-  const maleProducts = Products.filter(
-    (product) => product.category === "maleProducts"
+  const maleProducts = Products.filter((product) =>
+    product.category.includes("maleProducts")
   );
 
   const shuffledFArray = shuffleArray(femaleProducts);

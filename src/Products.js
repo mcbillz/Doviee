@@ -1,7 +1,7 @@
 const Products = [
   {
     id: "1",
-    category: "femaleProducts",
+    category: ["femaleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
@@ -13,7 +13,7 @@ const Products = [
   },
   {
     id: "2",
-    category: "femaleProducts",
+    category: ["femaleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291082/doviee/female/waldemar-B5UeE1SXxcA-unsplash_hbslpr.jpg",
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
@@ -25,7 +25,7 @@ const Products = [
   },
   {
     id: "3",
-    category: "femaleProducts",
+    category: ["femaleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291069/doviee/female/kermen-tutkunova-zjYvn9yqJl4-unsplash_npsybi.jpg",
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
@@ -37,7 +37,7 @@ const Products = [
   },
   {
     id: "4",
-    category: "femaleProducts",
+    category: ["femaleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685304981/doviee/female/matthew-moloney-hSj9AjsKu_s-unsplash_hheix9.jpg",
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
@@ -49,7 +49,7 @@ const Products = [
   },
   {
     id: "5",
-    category: "femaleProducts",
+    category: ["femaleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685304977/doviee/female/maria-lupan-6XfCTg2Rxpc-unsplash_phecrw.jpg",
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685291087/doviee/female/amy-harrison-fZGiAepEgyw-unsplash_d7ykvw.jpg",
@@ -61,7 +61,7 @@ const Products = [
   },
   {
     id: "6",
-    category: "maleProducts",
+    category: ["maleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459823/doviee/male/gregory-hayes-h5cd51KXmRQ-unsplash_hfu4zv.jpg",
     ],
@@ -72,7 +72,7 @@ const Products = [
   },
   {
     id: "7",
-    category: "maleProducts",
+    category: ["maleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459833/doviee/male/tyler-nix-BQrxXytYaHI-unsplash_kmrzmr.jpg",
     ],
@@ -82,7 +82,7 @@ const Products = [
     oldPrice: "45",
   },
   {
-    category: "maleProducts",
+    category: ["maleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459841/doviee/male/pascal-brauer-X1XAZZ284T4-unsplash_qhclzd.jpg",
     ],
@@ -93,7 +93,7 @@ const Products = [
   },
   {
     id: "9",
-    category: "maleProducts",
+    category: ["maleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459850/doviee/male/dami-adebayo-k6aQzmIbR1s-unsplash_qjs4sm.jpg",
     ],
@@ -104,7 +104,7 @@ const Products = [
   },
   {
     id: "10",
-    category: "maleProducts",
+    category: ["maleProducts"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685459869/doviee/male/raphael-nast-0nOcRsk_D-k-unsplash_uhszle.jpg",
     ],
@@ -115,62 +115,62 @@ const Products = [
   },
   {
     id: "11",
-    category: "sneakers",
+    category: ["sneakers", "shoes"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685543858/doviee/sneakers/usama-akram-kP6knT7tjn4-unsplash_mlqvu9.jpg",
     ],
     url: "",
-    name: "Knit Sweater",
+    name: "Sneakers",
     price: "30",
     oldPrice: "45",
   },
   {
     id: "12",
-    category: "sneakers",
+    category: ["sneakers", "shoes"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685543858/doviee/sneakers/usama-akram-s-gYAbQToXk-unsplash_y9svrt.jpg",
     ],
     url: "",
-    name: "Knit Sweater",
+    name: "Sneakers",
     price: "30",
     oldPrice: "45",
   },
   {
     id: "13",
-    category: "sneakers",
+    category: ["sneakers", "shoes"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685543875/doviee/sneakers/ryan-plomp-PGTO_A0eLt4-unsplash_eoh2ba.jpg",
     ],
     url: "",
-    name: "Knit Sweater",
+    name: "Sneakers",
     price: "30",
     oldPrice: "45",
   },
   {
     id: "14",
-    category: "sneakers",
+    category: ["sneakers", "shoes"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685543878/doviee/sneakers/ryan-plomp-76w_eDO1u1E-unsplash_bv3llb.jpg",
     ],
     url: "",
-    name: "Knit Sweater",
+    name: "Sneakers",
     price: "30",
     oldPrice: "45",
   },
   {
     id: "15",
-    category: "sneakers",
+    category: ["sneakers", "shoes"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685543882/doviee/sneakers/ryan-plomp-jvoZ-Aux9aw-unsplash_abvxuy.jpg",
     ],
     url: "",
-    name: "Knit Sweater",
+    name: "Sneakers",
     price: "30",
     oldPrice: "45",
   },
   {
     id: "16",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544820/doviee/Assesories/mediamodifier-t8HiP3e5abg-unsplash_damtty.jpg",
     ],
@@ -181,7 +181,7 @@ const Products = [
   },
   {
     id: "17",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544830/doviee/Assesories/michael-c-zVycYmcblDY-unsplash_dxqfkt.jpg",
     ],
@@ -192,7 +192,7 @@ const Products = [
   },
   {
     id: "18",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544835/doviee/Assesories/genesis-warner-P779eLIuKyU-unsplash_tmppc8.jpg",
     ],
@@ -203,7 +203,7 @@ const Products = [
   },
   {
     id: "19",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544850/doviee/Assesories/alex-chambers-TxCbfMc854c-unsplash_qecom4.jpg",
     ],
@@ -214,7 +214,7 @@ const Products = [
   },
   {
     id: "20",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544853/doviee/Assesories/the-nix-company-BNJOH2epTwk-unsplash_leu7uu.jpg",
     ],
@@ -225,7 +225,7 @@ const Products = [
   },
   {
     id: "21",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544862/doviee/Assesories/gabrielle-henderson-QG0CvafQooM-unsplash_yx71hc.jpg",
     ],
@@ -236,7 +236,7 @@ const Products = [
   },
   {
     id: "22",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544895/doviee/Assesories/arno-senoner-iUvQRvdIhsY-unsplash_ktrzqr.jpg",
     ],
@@ -247,7 +247,7 @@ const Products = [
   },
   {
     id: "23",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544905/doviee/Assesories/the-indian-face-HUVTcxU-FU4-unsplash_kevuqf.jpg",
     ],
@@ -258,7 +258,7 @@ const Products = [
   },
   {
     id: "24",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544923/doviee/Assesories/zac-wolff-2qfYizn95pk-unsplash_ibudfr.jpg",
     ],
@@ -269,7 +269,7 @@ const Products = [
   },
   {
     id: "25",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544926/doviee/Assesories/mike-cox-u70NAyHIbcE-unsplash_nm4odv.jpg",
     ],
@@ -280,7 +280,7 @@ const Products = [
   },
   {
     id: "26",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544944/doviee/Assesories/nati-melnychuk-5ngCICAXiH0-unsplash_fihn4c.jpg",
     ],
@@ -291,7 +291,7 @@ const Products = [
   },
   {
     id: "27",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544955/doviee/Assesories/nati-melnychuk-oO0JAOJhquk-unsplash_fjstoz.jpg",
     ],
@@ -302,7 +302,7 @@ const Products = [
   },
   {
     id: "28",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544960/doviee/Assesories/andres-vera-202NAwjisYA-unsplash_orjhbg.jpg",
     ],
@@ -313,7 +313,7 @@ const Products = [
   },
   {
     id: "29",
-    category: "assesories",
+    category: ["assesories"],
     src: [
       "https://res.cloudinary.com/dp6afxo4t/image/upload/v1685544980/doviee/Assesories/fabio-alves-MNzyXXfnnCg-unsplash_zwgpet.jpg",
     ],

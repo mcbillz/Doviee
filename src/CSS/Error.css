@@ -1,0 +1,35 @@
+.error-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error-img {
+}
+.error-h2 {
+  color: #e1cbbf;
+  font-size: 48px;
+}
+
+@media screen and (max-width: 1100px) {
+  .error-img {
+    width: 30vw;
+  }
+  .error-h2 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .error-h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .error-h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .error-h2 {
+    font-size: 12px;
+  }
+}
