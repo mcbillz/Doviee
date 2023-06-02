@@ -82,6 +82,9 @@
     margin: 0;
     padding: 5px 0;
   }
+  .product-info h3 {
+    font-size: 12px;
+  }
 }
 @media screen and (max-width: 400px) {
   .card {
@@ -95,5 +98,8 @@
   .product-info h3,
   p {
     padding: 3px 0;
+  }
+  .product-info h3 {
+    font-size: 8px;
   }
 }

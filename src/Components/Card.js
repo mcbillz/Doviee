@@ -17,7 +17,7 @@ function Card(props) {
           <div className="product-info">
             <h3 className="product-name">{pName}</h3>
             <p className="price">
-              ${pPrice} <span className="old-price">{oldPrice}</span>
+              {pPrice} <span className="old-price">{oldPrice}</span>
             </p>
           </div>
         </div>
