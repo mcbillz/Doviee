@@ -26,7 +26,7 @@ function Navbar(props) {
   } else {
     mobilenavStyle = { display: "none" };
   }
-
+  const maleProducts = "maleProducts";
   return (
     <div>
       <div className="nav">
@@ -74,11 +74,11 @@ function Navbar(props) {
         <div class="dropdown">
           <button class="dropdown-btn">Categories</button>
           <div class="dropdown-content">
-            <a href="/Productspage">All</a>
-            <a href="/MaleFashion">Men fashion</a>
-            <a href="/FemaleFashion">Women fashion</a>
-            <a href="/Sneakers">Sneakers</a>
-            <a href="/assesories">Assesories</a>
+            <a href="/Categories/all">All</a>
+            <a href="/Categories/maleProducts">Men fashion</a>
+            <a href="/Categories/femaleProducts">Women fashion</a>
+            <a href="/Categories/sneakers">Sneakers</a>
+            <a href="/Categories/assesories">Assesories</a>
             <a href="#">Gift cards</a>
           </div>
         </div>

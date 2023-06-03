@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import "../CSS/Productspage.css";
 import Navbar from "../Components/Navbar";
@@ -6,26 +6,41 @@ import Footer from "../Components/Footer";
 import Card from "../Components/Card";
 import Products from "../Products";
 import Error from "../Components/Error";
+import { useParams } from "react-router-dom";
 
-function FemaleFashion() {
-  const femaleProducts = Products.filter((product) =>
-    product.category.includes("femaleProducts")
-  );
+function Categories() {
+  // const { searchinput } = useParams();
+  const { category } = useParams();
+
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
+  // useEffect(() => {
+  //   setSearchQuery(searchinput);
+
+  //   // Perform the search logic here
+  //   const filteredResults = Products.filter((item) =>
+  //     item.name.toLowerCase().includes(searchinput.toLowerCase())
+  //   );
+  //   setSearchResults(filteredResults);
+  // }, [searchinput]);
+
+  const desiredCategory = Products.filter((product) =>
+    product.category.includes(category)
+  );
 
   const handleSearchInput = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
 
     // Perform the search logic here
-    const filteredResults = femaleProducts.filter((item) =>
+    const filteredResults = desiredCategory.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     );
     setSearchResults(filteredResults);
   };
 
-  const productsArray = searchQuery === "" ? femaleProducts : searchResults;
+  const productsArray = searchQuery === "" ? desiredCategory : searchResults;
   // PAGINATION
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(0);
@@ -95,4 +110,4 @@ function FemaleFashion() {
   );
 }
 
-export default FemaleFashion;
+export default Categories;

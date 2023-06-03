@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import "../CSS/Productspage.css";
 import Navbar from "../Components/Navbar";
@@ -6,8 +6,21 @@ import Footer from "../Components/Footer";
 import Card from "../Components/Card";
 import Products from "../Products";
 import Error from "../Components/Error";
+import { useParams } from "react-router-dom";
 
 function Productspage() {
+  const { searchinput } = useParams();
+
+  useEffect(() => {
+    setSearchQuery(searchinput);
+
+    // Perform the search logic here
+    const filteredResults = Products.filter((item) =>
+      item.name.toLowerCase().includes(searchinput.toLowerCase())
+    );
+    setSearchResults(filteredResults);
+  }, [searchinput]);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -38,6 +51,7 @@ function Productspage() {
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
+  console.log(searchQuery);
 
   // Handle page change
   const handlePageChange = ({ selected }) => {

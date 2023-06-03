@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../CSS/Landingpage.css";
 import Navbar from "../Components/Navbar";
 import Slider from "../Components/Slider";
@@ -9,6 +10,19 @@ import Products from "../Products";
 import { BrownBtn, BoarderBrownBtn } from "../Components/Btns";
 
 function Landingpage() {
+  const navigate = useNavigate();
+  const [searchInput, setSearchInput] = useState("");
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    if (searchInput.trim() !== "") {
+      navigate(`/Productspage/${searchInput}`);
+    }
+  };
+
+  const handleSearchInput = (event) => {
+    setSearchInput(event.target.value);
+  };
+
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -32,6 +46,18 @@ function Landingpage() {
   return (
     <div className="par">
       <Navbar />
+      <form onSubmit={handleSearchSubmit}>
+        <input
+          style={{ borderColor: "#e1cbbf" }}
+          placeholder="Search products"
+          className="search"
+          value={searchInput}
+          onChange={handleSearchInput}
+        ></input>
+        <button type="submit" className="search-btn">
+          <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685206701/doviee/icons/search-line_umfkmq.png" />
+        </button>
+      </form>
       <div className="section1">
         <Slider gender="female" />
         <div className="sec1text">
