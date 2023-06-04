@@ -83,7 +83,7 @@ function Categories() {
           currentItems.map((item, index) => (
             <Card
               key={item.id}
-              pPage={`/Productspage/${item.id}`}
+              pPage={`/Product/${item.id}`}
               pImg={item.src[0]}
               pName={item.name}
               pPrice={item.price}

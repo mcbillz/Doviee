@@ -77,7 +77,7 @@ function Landingpage() {
         {randomMItems.map((item) => (
           <Card
             key={item.id}
-            pPage={`/Productspage/${item.id}`}
+            pPage={`/Product/${item.id}`}
             pImg={item.src[0]}
             pName={item.name}
             pPrice={item.price}
@@ -92,7 +92,7 @@ function Landingpage() {
         {randomFItems.map((item) => (
           <Card
             key={item.id}
-            pPage={`/Productspage/${item.id}`}
+            pPage={`/Product/${item.id}`}
             pImg={item.src[0]}
             pName={item.name}
             pPrice={item.price}

@@ -1,8 +1,10 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../CSS/Navbar.css";
+import CartContext from "../context/cart/CartContext";
 
 function Navbar(props) {
+  const { cartItems, showHideCart } = useContext(CartContext);
   const [toggle, setToggle] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
 
@@ -26,7 +28,6 @@ function Navbar(props) {
   } else {
     mobilenavStyle = { display: "none" };
   }
-  const maleProducts = "maleProducts";
   return (
     <div>
       <div className="nav">
@@ -63,8 +64,14 @@ function Navbar(props) {
             </div>
           </div>
           <div>
-            <a>
-              <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685203944/doviee/icons/shopping-cart-2-line_c3dvo5.png" />
+            <a id="cart">
+              <img
+                id="cart-img"
+                src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685203944/doviee/icons/shopping-cart-2-line_c3dvo5.png"
+              />
+              {cartItems.length > 0 && (
+                <span id="cart-no">{cartItems.length}</span>
+              )}
             </a>
           </div>
         </div>
@@ -98,8 +105,14 @@ function Navbar(props) {
               </div>
             </div>
             <div>
-              <a>
-                <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685203944/doviee/icons/shopping-cart-2-line_c3dvo5.png" />
+              <a id="cart">
+                <img
+                  id="cart-img"
+                  src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685203944/doviee/icons/shopping-cart-2-line_c3dvo5.png"
+                />
+                {cartItems.length > 0 && (
+                  <span id="cart-no">{cartItems.length}</span>
+                )}
               </a>
             </div>
           </div>

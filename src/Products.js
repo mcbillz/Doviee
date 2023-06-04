@@ -11,7 +11,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater product 1",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -26,7 +26,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -41,7 +41,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -56,7 +56,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -71,7 +71,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -85,7 +85,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -99,7 +99,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -113,7 +113,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -127,7 +127,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -141,7 +141,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -155,7 +155,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Sneakers",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -169,7 +169,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Sneakers",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -183,7 +183,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Sneakers",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -197,7 +197,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Sneakers",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -211,7 +211,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Sneakers",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -225,7 +225,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -239,7 +239,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -253,7 +253,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -267,7 +267,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -281,7 +281,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -295,7 +295,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -309,7 +309,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -323,7 +323,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -337,7 +337,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -351,7 +351,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -365,7 +365,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -379,7 +379,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -393,7 +393,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
   {
@@ -407,7 +407,7 @@ const Products = [
     colors: ["black", "white", "brown", "yellow", "blue", "red"],
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     name: "Knit Sweater",
-    price: "$30",
+    price: "30",
     oldPrice: "45",
   },
 ];
