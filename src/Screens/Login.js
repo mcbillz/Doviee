@@ -46,7 +46,7 @@ function Login() {
               <label className="labelL">Email</label>
               <input name="email" className="inputL"></input>
               <label className="labelL">Password</label>
-              <input name="password" className="inputL"></input>
+              <input type="password" name="password" className="inputL"></input>
               <p className="pL">
                 <input name="remember" type="checkbox" className="ck" />{" "}
                 Remember me
@@ -67,10 +67,14 @@ function Login() {
                 value="Sign up"
                 className="inputL"
               ></input>
+              <label className="labelL">First name</label>
+              <input name="fName" className="inputL"></input>
+              <label className="labelL">Last name</label>
+              <input name="lName" className="inputL"></input>
               <label className="labelL">Email</label>
               <input name="email" className="inputL"></input>
               <label className="labelL">Password</label>
-              <input name="password" className="inputL"></input>
+              <input type="password" name="password" className="inputL"></input>
               <button type="submit" className="buttonL">
                 Sign up
               </button>

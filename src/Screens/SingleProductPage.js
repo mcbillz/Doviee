@@ -17,8 +17,8 @@ const SingleProductPage = () => {
   const { productId } = useParams();
   const product = Products.find((product) => product.id === productId);
 
-  let [netPrice, setNetPrice] = useState();
   let [formData, setFormData] = useState({ quantity: 1, size: "", color: "" });
+  let [netPrice, setNetPrice] = useState(formData.quantity * product.price);
 
   function handleInputChange(event) {
     const { name, value } = event.target;

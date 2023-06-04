@@ -6,7 +6,7 @@ import CartContext from "../context/cart/CartContext";
 function Navbar(props) {
   const { cartItems, showHideCart } = useContext(CartContext);
   const [toggle, setToggle] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(true);
 
   let mobilenavStyle = {};
   if (toggle === true) {
@@ -60,11 +60,15 @@ function Navbar(props) {
           <div class="dropdown">
             <button class="dropdown-btn">User</button>
             <div class="dropdown-content">
-              <Link to="/Login">Login</Link>
+              {isRegistered ? (
+                <Link to="/Profile">Username</Link>
+              ) : (
+                <Link to="/Login">Login</Link>
+              )}
             </div>
           </div>
           <div>
-            <a id="cart">
+            <a href="/Cart" id="cart">
               <img
                 id="cart-img"
                 src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685203944/doviee/icons/shopping-cart-2-line_c3dvo5.png"
@@ -101,11 +105,15 @@ function Navbar(props) {
             <div class="dropdown">
               <button class="dropdown-btn">User</button>
               <div class="dropdown-content">
-                <Link to="/Login">Login</Link>
+                {isRegistered ? (
+                  <Link to="/Profile">Username</Link>
+                ) : (
+                  <Link to="/Login">Login</Link>
+                )}
               </div>
             </div>
             <div>
-              <a id="cart">
+              <a href="/Cart" id="cart">
                 <img
                   id="cart-img"
                   src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685203944/doviee/icons/shopping-cart-2-line_c3dvo5.png"
