@@ -34,7 +34,7 @@ function Cart() {
             <div style={{ marginLeft: "1vw" }}>{cartTotal}</div>
           </div>
           <div className="cartTotal">
-            <a href="">Edit shipping details</a>
+            <a href="/Profile">Edit shipping details</a>
           </div>
           <div className="cartTotal">
             <a href="">
