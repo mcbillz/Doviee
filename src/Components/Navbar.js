@@ -4,9 +4,9 @@ import "../CSS/Navbar.css";
 import CartContext from "../context/cart/CartContext";
 
 function Navbar(props) {
-  const { cartItems, showHideCart } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
   const [toggle, setToggle] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(true);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   let mobilenavStyle = {};
   if (toggle === true) {
@@ -90,7 +90,7 @@ function Navbar(props) {
             <a href="/Categories/femaleProducts">Women fashion</a>
             <a href="/Categories/sneakers">Sneakers</a>
             <a href="/Categories/assesories">Assesories</a>
-            <a href="#">Gift cards</a>
+            {/* <a href="#">Gift cards</a> */}
           </div>
         </div>
         <a href="#">About us</a>

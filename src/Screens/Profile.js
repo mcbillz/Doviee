@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import "../CSS/Profile.css";
 
 function Profile() {
+  const [toggle, setToggle] = useState(false);
+  const [edPhoneNumber, setEdPhoneNumber] = useState("");
+  const [edAddress, setEdAddress] = useState("");
+
+  function handleToggle() {
+    setToggle(!toggle);
+  }
+  function handleSubmit() {
+    setToggle(!toggle);
+  }
+  function handledPh(event) {
+    setEdPhoneNumber(event.target.value);
+  }
+  function handledAd(event) {
+    setEdAddress(event.target.value);
+  }
   return (
     <div className="Prof">
       <Navbar />
@@ -18,17 +34,31 @@ function Profile() {
         </div>
         <div className="user-info">
           <h3>Phone No: </h3>
-          <h4>+18761234098</h4>
+          <h4>{edPhoneNumber}</h4>
         </div>
         <div className="user-info">
           <h3>Address: </h3>
-          <h4>No 233 morgan john blvd 6778 San Diego, CA</h4>
+          <h4>{edAddress}</h4>
         </div>
-        {/* <div className="user-info">
-          <h3>Email: </h3>
-          <h4>email@gmail.com</h4>
-        </div> */}
+        <button onClick={handleToggle} className="ed-btn">
+          Edit
+        </button>
       </div>
+      {toggle ? (
+        <div>
+          <form className="ed-frm">
+            <label>Phone number</label>
+            <input onChange={handledPh} value={edPhoneNumber}></input>
+            <label>Address</label>
+            <input onChange={handledAd} value={edAddress}></input>
+            <button onClick={handleSubmit} className="ed-btn">
+              Submit
+            </button>
+          </form>
+        </div>
+      ) : (
+        <div></div>
+      )}
 
       <Footer />
     </div>

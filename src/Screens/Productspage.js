@@ -33,6 +33,7 @@ function Productspage() {
       item.name.toLowerCase().includes(query.toLowerCase())
     );
     setSearchResults(filteredResults);
+    setCurrentPage(0);
   };
 
   const productsArray = searchQuery === "" ? Products : searchResults;

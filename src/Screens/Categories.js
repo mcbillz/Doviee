@@ -9,21 +9,10 @@ import Error from "../Components/Error";
 import { useParams } from "react-router-dom";
 
 function Categories() {
-  // const { searchinput } = useParams();
   const { category } = useParams();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-
-  // useEffect(() => {
-  //   setSearchQuery(searchinput);
-
-  //   // Perform the search logic here
-  //   const filteredResults = Products.filter((item) =>
-  //     item.name.toLowerCase().includes(searchinput.toLowerCase())
-  //   );
-  //   setSearchResults(filteredResults);
-  // }, [searchinput]);
 
   const desiredCategory = Products.filter((product) =>
     product.category.includes(category)
@@ -38,6 +27,8 @@ function Categories() {
       item.name.toLowerCase().includes(query.toLowerCase())
     );
     setSearchResults(filteredResults);
+
+    setCurrentPage(0);
   };
 
   const productsArray = searchQuery === "" ? desiredCategory : searchResults;

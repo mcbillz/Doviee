@@ -12,6 +12,30 @@
 .user-info h3 {
   margin-right: 20px;
 }
+.ed-btn {
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 100;
+  border: none;
+  cursor: pointer;
+  padding: 0px 10px;
+  color: #e1cbbf;
+  background: #846d61;
+  margin: 15px 0 10px;
+}
+.ed-frm {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+  font-family: "Ysabeau", sans-serif;
+}
+.ed-frm label {
+  font-size: 1rem;
+}
+.ed-frm input {
+  font-family: "Ysabeau", sans-serif;
+}
 @media screen and (max-width: 750px) {
   .user-info h3 {
     font-size: 20px;

@@ -1,6 +1,6 @@
 .card {
   width: 426px;
-  height: 780px;
+  height: 760px;
   display: flex;
   flex-direction: column;
   background-color: #fefcf3;
@@ -89,7 +89,7 @@
 @media screen and (max-width: 400px) {
   .card {
     width: 135px;
-    height: 249px;
+    height: 240px;
   }
   .img-cont {
     display: flex;
