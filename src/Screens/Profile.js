@@ -5,8 +5,10 @@ import "../CSS/Profile.css";
 
 function Profile() {
   const [toggle, setToggle] = useState(false);
-  const [edPhoneNumber, setEdPhoneNumber] = useState("");
-  const [edAddress, setEdAddress] = useState("");
+  const [edPhoneNumber, setEdPhoneNumber] = useState("+18761230987");
+  const [edAddress, setEdAddress] = useState(
+    "no 765 morgan blvd San diego, CA"
+  );
 
   function handleToggle() {
     setToggle(!toggle);

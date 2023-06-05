@@ -13,6 +13,7 @@ const Products = [
     name: "Knit Sweater product 1",
     price: "30",
     oldPrice: "45",
+    availability: false,
   },
   {
     id: "2",
@@ -28,6 +29,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "3",
@@ -43,6 +45,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "4",
@@ -58,6 +61,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "5",
@@ -73,6 +77,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "6",
@@ -87,6 +92,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "7",
@@ -101,6 +107,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "8",
@@ -115,6 +122,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "9",
@@ -129,6 +137,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "10",
@@ -143,6 +152,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "11",
@@ -157,6 +167,7 @@ const Products = [
     name: "Sneakers",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "12",
@@ -171,6 +182,7 @@ const Products = [
     name: "Sneakers",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "13",
@@ -185,6 +197,7 @@ const Products = [
     name: "Sneakers",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "14",
@@ -199,6 +212,7 @@ const Products = [
     name: "Sneakers",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "15",
@@ -213,6 +227,7 @@ const Products = [
     name: "Sneakers",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "16",
@@ -227,6 +242,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "17",
@@ -241,6 +257,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "18",
@@ -255,6 +272,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "19",
@@ -269,6 +287,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "20",
@@ -283,6 +302,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "21",
@@ -297,6 +317,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "22",
@@ -311,6 +332,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "23",
@@ -325,6 +347,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "24",
@@ -339,6 +362,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "25",
@@ -353,6 +377,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "26",
@@ -367,6 +392,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "27",
@@ -381,6 +407,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "28",
@@ -395,6 +422,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
   {
     id: "29",
@@ -409,6 +437,7 @@ const Products = [
     name: "Knit Sweater",
     price: "30",
     oldPrice: "45",
+    availability: true,
   },
 ];
 

@@ -110,9 +110,20 @@ const SingleProductPage = () => {
                 <option className="size-option">{color}</option>
               ))}
             </select>
-            <button className="add-to-cart" type="submit">
-              Add to Cart
-            </button>
+            {product.availability ? (
+              <button className="add-to-cart" type="submit">
+                Add to Cart
+              </button>
+            ) : (
+              <button
+                style={{ backgroundColor: "gray" }}
+                disabled
+                className="add-to-cart"
+                type="submit"
+              >
+                Out of stock
+              </button>
+            )}
           </form>
         </div>
       </div>
