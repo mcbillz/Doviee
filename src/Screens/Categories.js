@@ -4,11 +4,21 @@ import "../CSS/Productspage.css";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Card from "../Components/Card";
-import Products from "../Products";
+import axios from "axios";
 import Error from "../Components/Error";
 import { useParams } from "react-router-dom";
 
 function Categories() {
+  const [Products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get("/api/Products");
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
+
   const { category } = useParams();
 
   const [searchQuery, setSearchQuery] = useState("");

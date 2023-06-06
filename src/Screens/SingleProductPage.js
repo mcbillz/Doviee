@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import Error from "../Components/Error";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import Products from "../Products";
+import axios from "axios";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "../CSS/SingleProductPage.css";
@@ -15,7 +15,16 @@ const SingleProductPage = () => {
   let opts = { format: "%s%v", symbol: "$" };
 
   const { productId } = useParams();
-  const product = Products.find((product) => product.id === productId);
+
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/Product/${productId}`);
+      setProduct(data);
+    };
+    fetchProduct();
+  }, [productId]);
 
   let [formData, setFormData] = useState({ quantity: 1, size: "", color: "" });
   let [netPrice, setNetPrice] = useState(formData.quantity * product.price);
@@ -43,7 +52,7 @@ const SingleProductPage = () => {
   if (!product) {
     return <Error errorMessage="Sorry, Product not found!" />;
   }
-  console.log(netPrice);
+  console.log(product);
 
   return (
     <div className="cont">
@@ -51,9 +60,9 @@ const SingleProductPage = () => {
       <div className="main-cont">
         <div className="single-slider-div">
           <Splide>
-            {product.src.map((src, index) => (
+            {product?.src?.map((src, index) => (
               <SplideSlide>
-                <img src={src} alt="product image" />
+                <img key={index} src={src} alt="product img" />
               </SplideSlide>
             ))}
           </Splide>
@@ -93,8 +102,10 @@ const SingleProductPage = () => {
               <option disabled selected className="size-option">
                 Size
               </option>
-              {product.sizes.map((size, index) => (
-                <option className="size-option">{size}</option>
+              {product?.size?.map((size, index) => (
+                <option key={index} className="size-option">
+                  {size}
+                </option>
               ))}
             </select>
             <select
@@ -106,8 +117,10 @@ const SingleProductPage = () => {
               <option disabled selected className="colour-option">
                 Color
               </option>
-              {product.colors.map((color, index) => (
-                <option className="size-option">{color}</option>
+              {product?.colors?.map((color, index) => (
+                <option key={index} className="size-option">
+                  {color}
+                </option>
               ))}
             </select>
             {product.availability ? (

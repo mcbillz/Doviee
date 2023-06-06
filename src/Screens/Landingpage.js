@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Landingpage.css";
 import Navbar from "../Components/Navbar";
@@ -6,7 +6,7 @@ import Slider from "../Components/Slider";
 import Card from "../Components/Card";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
-import Products from "../Products";
+import axios from "axios";
 import { BrownBtn, BoarderBrownBtn } from "../Components/Btns";
 
 function Landingpage() {
@@ -30,6 +30,16 @@ function Landingpage() {
     }
     return array;
   }
+
+  const [Products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get("/api/Products");
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
 
   const femaleProducts = Products.filter((product) =>
     product.category.includes("femaleProducts")
