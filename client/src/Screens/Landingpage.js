@@ -41,12 +41,16 @@ function Landingpage() {
     fetchProducts();
   }, []);
 
-  const femaleProducts = Products.filter((product) =>
-    product.category.includes("femaleProducts")
-  );
-  const maleProducts = Products.filter((product) =>
-    product.category.includes("maleProducts")
-  );
+  const femaleProducts =
+    Products.length !== 0
+      ? Products.filter((product) =>
+          product.category.includes("femaleProducts")
+        )
+      : [];
+  const maleProducts =
+    Products.length !== 0
+      ? Products.filter((product) => product.category.includes("maleProducts"))
+      : [];
 
   const shuffledFArray = shuffleArray(femaleProducts);
   const randomFItems = shuffledFArray.slice(0, 4);
