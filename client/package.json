@@ -2,7 +2,7 @@
   "name": "doviee",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:2000/",
+  "proxy":"http://doviee-api.vercel.app/",
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@testing-library/jest-dom": "^5.16.5",
@@ -46,3 +46,6 @@
     "assert": false
   }
 }
+
+
+// http://localhost:2000/
