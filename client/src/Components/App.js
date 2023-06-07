@@ -10,7 +10,7 @@ import SingleProductPage from "../Screens/SingleProductPage";
 
 function App() {
   return (
-    <BrowserRouter basename="/doviee.vercel.app">
+    <BrowserRouter>
       <Routes>
         <Route />
         <Route exact path="/" element={<LandingPage />} />
