@@ -89,7 +89,6 @@ function Productspage() {
           ))
         )}
       </div>
-      {/* Render pagination component */}
       <ReactPaginate
         pageCount={pageCount}
         marginPagesDisplayed={2}

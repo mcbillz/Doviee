@@ -18,11 +18,10 @@ function Slider(props) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Increment the image index, or reset to 0 when reaching the end
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Change the duration (in milliseconds) between each image
+    }, 5000);
 
     return () => {
       clearInterval(interval);

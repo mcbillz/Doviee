@@ -93,7 +93,6 @@ function Categories() {
           ))
         )}
       </div>
-      {/* Render pagination component */}
       <ReactPaginate
         pageCount={pageCount}
         marginPagesDisplayed={2}

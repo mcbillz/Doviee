@@ -90,14 +90,11 @@ function Navbar(props) {
             <a href="/Categories/femaleProducts">Women fashion</a>
             <a href="/Categories/sneakers">Sneakers</a>
             <a href="/Categories/assesories">Assesories</a>
-            {/* <a href="#">Gift cards</a> */}
           </div>
         </div>
         <a href="#">About us</a>
         <a href="#">Support</a>
       </div>
-
-      {/* mobilenav */}
 
       <div style={mobilenavStyle} className="mobile-nav">
         <div>
