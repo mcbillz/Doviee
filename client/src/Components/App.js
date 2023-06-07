@@ -12,6 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route basename="/doviee.vercel.app" />
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Cart" element={<Cart />} />
