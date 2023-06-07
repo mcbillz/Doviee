@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import LandingPage from "../Screens/Landingpage";
 import Login from "../Screens/Login";
 import Cart from "../Screens/Cart";
@@ -10,8 +10,9 @@ import SingleProductPage from "../Screens/SingleProductPage";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/doviee.vercel.app">
       <Routes>
+        <Route />
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Cart" element={<Cart />} />
@@ -20,7 +21,7 @@ function App() {
         <Route path="/Categories/:category" element={<Categories />} />
         <Route path="/Product/:productId" element={<SingleProductPage />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
