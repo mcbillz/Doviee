@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "../Screens/Landingpage";
 import Login from "../Screens/Login";
 import Cart from "../Screens/Cart";
@@ -10,7 +10,7 @@ import SingleProductPage from "../Screens/SingleProductPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="https://doviee.vercel.app/">
       <Routes>
         <Route />
         <Route exact path="/" element={<LandingPage />} />

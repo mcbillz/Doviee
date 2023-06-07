@@ -32,7 +32,6 @@ function Categories() {
     const query = event.target.value;
     setSearchQuery(query);
 
-    // Perform the search logic here
     const filteredResults = desiredCategory.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     );
@@ -42,23 +41,19 @@ function Categories() {
   };
 
   const productsArray = searchQuery === "" ? desiredCategory : searchResults;
-  // PAGINATION
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(0);
 
-  // Calculate the total number of pages
   const pageCount = Math.ceil(productsArray.length / itemsPerPage);
 
   const truncatedPageCount = pageCount > 10 ? 10 : pageCount;
   const isTruncated = pageCount > 10;
 
-  // Get the current slice of items to display
   const currentItems = productsArray.slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
 
-  // Handle page change
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
