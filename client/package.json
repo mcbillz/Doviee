@@ -1,7 +1,7 @@
 {
   "name": "doviee",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "doviee.vercel.app",
   "private": true,
   "proxy": "https://doviee-api.vercel.app/",
   "dependencies": {
