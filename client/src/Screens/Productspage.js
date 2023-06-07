@@ -4,19 +4,31 @@ import "../CSS/Productspage.css";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Card from "../Components/Card";
-import Products from "../Products";
+import axios from "axios";
 import Error from "../Components/Error";
 import { useParams } from "react-router-dom";
 
 function Productspage() {
   const { searchinput } = useParams();
 
+  const [Products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get("/api/Products");
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
+
   useEffect(() => {
     setSearchQuery(searchinput);
 
-    const filteredResults = Products.filter((item) =>
-      item.name.toLowerCase().includes(searchinput.toLowerCase())
-    );
+    const filteredResults = Array.isArray(Products)
+      ? Products.filter((item) =>
+          item.name.toLowerCase().includes(searchinput.toLowerCase())
+        )
+      : [];
     setSearchResults(filteredResults);
   }, [searchinput]);
 
@@ -27,9 +39,11 @@ function Productspage() {
     const query = event.target.value;
     setSearchQuery(query);
 
-    const filteredResults = Products.filter((item) =>
-      item.name.toLowerCase().includes(query.toLowerCase())
-    );
+    const filteredResults = Array.isArray(Products)
+      ? Products.filter((item) =>
+          item.name.toLowerCase().includes(query.toLowerCase())
+        )
+      : [];
     setSearchResults(filteredResults);
     setCurrentPage(0);
   };

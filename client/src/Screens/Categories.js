@@ -24,9 +24,9 @@ function Categories() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  const desiredCategory = Products.filter((product) =>
-    product.category.includes(category)
-  );
+  const desiredCategory = Array.isArray(Products)
+    ? Products.filter((product) => product.category.includes(category))
+    : [];
 
   const handleSearchInput = (event) => {
     const query = event.target.value;
