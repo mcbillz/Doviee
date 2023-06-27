@@ -19,11 +19,13 @@ const SingleProductPage = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      const { data } = await axios.get(`/api/Product/${productId}`);
+    const fetchProducts = async () => {
+      const { data } = await axios.get(
+        `http://localhost:2000/api/Product/${productId}`
+      );
       setProduct(data);
     };
-    fetchProduct();
+    fetchProducts();
   }, [productId]);
 
   let [formData, setFormData] = useState({ quantity: 1, size: "", color: "" });

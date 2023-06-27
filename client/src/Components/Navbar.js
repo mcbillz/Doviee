@@ -4,9 +4,8 @@ import "../CSS/Navbar.css";
 import CartContext from "../context/cart/CartContext";
 
 function Navbar(props) {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, isLoggedIn, userInfo } = useContext(CartContext);
   const [toggle, setToggle] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(false);
 
   let mobilenavStyle = {};
   if (toggle === true) {
@@ -60,10 +59,13 @@ function Navbar(props) {
           <div class="dropdown">
             <button class="dropdown-btn">User</button>
             <div class="dropdown-content">
-              {isRegistered ? (
-                <Link to="/Profile">Username</Link>
+              {isLoggedIn ? (
+                <Link to="/Profile">{userInfo.firstName}</Link>
               ) : (
-                <Link to="/Login">Login</Link>
+                <div>
+                  <Link to="/Login">Login</Link>
+                  <Link to="/">Logout</Link>
+                </div>
               )}
             </div>
           </div>
@@ -102,10 +104,13 @@ function Navbar(props) {
             <div class="dropdown">
               <button class="dropdown-btn">User</button>
               <div class="dropdown-content">
-                {isRegistered ? (
-                  <Link to="/Profile">Username</Link>
+                {isLoggedIn ? (
+                  <Link to="/Profile">{userInfo.firstName}</Link>
                 ) : (
-                  <Link to="/Login">Login</Link>
+                  <div>
+                    <Link to="/Login">Login</Link>
+                    <Link to="/">Logout</Link>
+                  </div>
                 )}
               </div>
             </div>

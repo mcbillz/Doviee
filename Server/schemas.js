@@ -1,0 +1,45 @@
+import mongoose from "mongoose";
+import passportLocalMongoose from "passport-local-mongoose";
+import passport from "passport";
+
+const productSchema = new mongoose.Schema({
+  id: Number,
+  category: Array,
+  src: Array,
+  description: String,
+  colors: Array,
+  sizes: Array,
+  name: String,
+  price: Number,
+  oldPrice: Number,
+  availability: Boolean,
+});
+const Product = mongoose.model("Product", productSchema);
+
+const cartSchema = new mongoose.Schema({
+  cartItem: [productSchema],
+});
+const Cart = mongoose.model("Cart", cartSchema);
+
+const orderSchema = new mongoose.Schema({
+  orderId: Number,
+  username: String,
+  phNumber: String,
+  address: String,
+  orderAmount: Number,
+  orderDetails: Array,
+  paymentStatus: Boolean,
+  orderStatus: String,
+  date: Date,
+});
+const Order = mongoose.model("Order", orderSchema);
+
+const paymentSchema = new mongoose.Schema({
+  orderId: Number,
+  transactionId: String,
+  paymentStatus: Boolean,
+  date: Date,
+});
+const Payment = mongoose.model("Payment", paymentSchema);
+
+export { Product, Cart, Order, Payment };
