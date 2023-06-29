@@ -13,7 +13,7 @@ function Categories() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("http://localhost:2000/api/Products");
+      const { data } = await axios.get("https://doviee-api.vercel.app/api/Products");
       setProducts(data);
     };
     fetchProducts();

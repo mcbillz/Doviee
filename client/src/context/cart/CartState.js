@@ -20,8 +20,8 @@ const CartState = ({ children }) => {
 
   const [state, dispatch] = useReducer(CartReducer, initialState);
 
-  const userInformation = (userInformation) => {
-    dispatch({ type: USER_INFO, payload: userInformation });
+  const userInformation = (theInformation) => {
+    dispatch({ type: USER_INFO, payload: theInformation });
   };
 
   const login = () => {

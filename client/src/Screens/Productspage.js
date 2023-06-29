@@ -6,34 +6,44 @@ import Footer from "../Components/Footer";
 import Card from "../Components/Card";
 import axios from "axios";
 import Error from "../Components/Error";
-import { useParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 
 function Productspage() {
-  const { searchinput } = useParams();
-
+  const { searchInput } = useParams();
   const [Products, setProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(searchInput || ""); 
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get("/api/Products");
-      setProducts(data);
+    const fetchProducts = () => {
+      axios({
+        method: "GET",
+        withCredentials: true,
+        url: "https://doviee-api.vercel.app/api/Products"
+      })
+        .then(function (res) {
+          setProducts(res.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     };
+
     fetchProducts();
   }, []);
 
   useEffect(() => {
-    setSearchQuery(searchinput);
+    const inSearch = () => {
+      const filteredResults = Array.isArray(Products)
+        ? Products.filter((item) =>
+            item.name.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+        : [];
+      setSearchResults(filteredResults);
+    };
 
-    const filteredResults = Array.isArray(Products)
-      ? Products.filter((item) =>
-          item.name.toLowerCase().includes(searchinput.toLowerCase())
-        )
-      : [];
-    setSearchResults(filteredResults);
-  }, [searchinput]);
-
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+    inSearch();
+  }, [searchQuery, Products]);
 
   const handleSearchInput = (event) => {
     const query = event.target.value;
@@ -61,7 +71,6 @@ function Productspage() {
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
-  console.log(searchQuery);
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);

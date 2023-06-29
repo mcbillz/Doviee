@@ -2,19 +2,18 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { Product, Cart, Order, Payment } from "./schemas.js";
+import { User, Product, Cart, Order, Payment } from "./schemas.js";
 import session from "express-session";
 import passport from "passport";
-import passportLocalMongoose from "passport-local-mongoose";
 import requestIp from "request-ip";
-import passportLocal from "passport-local";
+import cookieParser from 'cookie-parser'
+import bcrypt from 'bcryptjs'
 
 dotenv.config();
 
 const app = express();
-const LocalStrategy = passportLocal.Strategy;
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: "https://doviee.vercel.app", credentials: true }));
 app.use(express.json());
 
 app.use(
@@ -25,8 +24,11 @@ app.use(
   })
 );
 
+app.use(cookieParser(process.env.SECRET))
 app.use(passport.initialize());
 app.use(passport.session());
+import configurePassport from "./passportConfig.js";
+configurePassport(passport);
 
 mongoose
   .connect(
@@ -38,119 +40,71 @@ mongoose
   )
   .catch((error) => console.log(`Mongo Error:${error.message}`));
 
-passport.use(
-  new LocalStrategy(function (username, password, done) {
-    User.findOne({ username: username }, function (err, user) {
-      if (err) {
-        return done(err);
-      }
-      if (!user) {
-        return done(null, false, { message: "Invalid username or password" });
-      }
-      if (!user.verifyPassword(password)) {
-        return done(null, false, { message: "Invalid username or password" });
-      }
-      return done(null, user);
-    });
-  })
-);
 
-const userSchema = new mongoose.Schema({
-  firstName: { type: String },
-  lastName: { type: String },
-  username: { type: String, unique: true },
-  number: String,
-  address: String,
-  password: { type: String },
-  googleId: String,
-  ip: { type: String },
-  date: Date,
-  isAdmin: Boolean,
-});
-userSchema.plugin(passportLocalMongoose);
-const User = mongoose.model("User", userSchema);
-passport.use(User.createStrategy());
-passport.serializeUser(function (user, done) {
-  console.log("Serializing user:", user);
-  done(null, user.id);
-});
-passport.deserializeUser(function (id, done) {
-  console.log("Deserializing user ID:", id);
-  User.findById(id, function (err, user) {
-    console.log("Deserialized user:", user);
-    done(err, user);
-  });
-});
-
-app.post("/api/signup", (req, res) => {
-  console.log(req.body);
+app.post("/api/signup", async (req, res) => {
   const ip = requestIp.getClientIp(req);
-
   const { fName, lName, email, password } = req.body;
-  User.register(
-    {
-      firstName: fName,
-      lastName: lName,
-      username: email,
-      ip: ip,
-      date: new Date(Date.now()),
-      isAdmin: false,
-    },
-    password,
-    function (err, user) {
-      if (err) {
-        console.error(err.message);
-        res.status(409).json({
-          message: "A user with the given username is already registered",
-        });
-      } else {
-        res.status(201).json({ message: "User registration successful" });
-      }
-    }
-  );
-});
-
-app.post("/api/login", async (req, res, next) => {
-  const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ username: email }).exec();
+    const result = await User.findOne({ username: email });
 
-    if (!user) {
-      return res.status(401).json({
-        authenticated: false,
-        message: "Invalid username or password",
+    if (result) {
+      res.send("User exists");
+    } else {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const newUser = new User({
+        firstName: fName,
+        lastName: lName,
+        username: email,
+        password: hashedPassword,
+        ip: ip,
+        date: new Date(Date.now()),
+        isAdmin: false,
       });
+
+      await newUser.save();
+      res.send("Sign up Successful");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.post("/api/login", (req, res, next) => {
+    passport.authenticate("local", (err, user, info) => {
+      if (err) throw err;
+      if (!user) res.send("No User Exists");
+      else {
+        req.logIn(user, (err) => {
+          if (err) throw err;
+          const userInfo = {
+            id: req.user._id,
+            username: req.user.username,
+            firstName: req.user.firstName,
+            lastName: req.user.lastName,
+            isAdmin: req.user.isAdmin,
+          };
+         console.log(userInfo)
+         res.json(userInfo);
+        });
+      }
+    })(req, res, next);
+
+})
+
+app.get("/api/Products", async (req, res) => {
+  try {
+    const product = await Product.find();
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
     }
 
-    req.login(user, function (err) {
-      if (err) {
-        console.log(err);
-        return res.status(500).json({ error: "Internal Server Error" });
-      }
-      console.log(user._id);
-      passport.authenticate("local", function (err) {
-        if (err) {
-          console.log("Authentication error:", err);
-          return res.status(500).json({ error: "Authentication Error" });
-        }
-        console.log("Authentication callback executed");
-        const userInfo = {
-          id: req.user._id,
-          username: req.user.username,
-          firstName: req.user.firstName,
-          lastName: req.user.lastName,
-          isAdmin: req.user.isAdmin,
-        };
-        console.log(userInfo);
-        return res
-          .status(201)
-          .json({ message: "User authenticated", userInfo });
-      });
-    });
+    res.json(product);
   } catch (err) {
-    console.log(err);
-    return res.status(500).json({ error: "Internal Server Error" });
+    console.error("Error:", err);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 

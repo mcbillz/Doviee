@@ -2,6 +2,21 @@ import mongoose from "mongoose";
 import passportLocalMongoose from "passport-local-mongoose";
 import passport from "passport";
 
+const userSchema = new mongoose.Schema({
+  firstName: { type: String },
+  lastName: { type: String },
+  username: { type: String, unique: true },
+  number: String,
+  address: String,
+  password: { type: String },
+  googleId: String,
+  ip: { type: String },
+  date: Date,
+  isAdmin: Boolean,
+});
+
+const User = mongoose.model("User", userSchema);
+
 const productSchema = new mongoose.Schema({
   id: Number,
   category: Array,
@@ -42,4 +57,4 @@ const paymentSchema = new mongoose.Schema({
 });
 const Payment = mongoose.model("Payment", paymentSchema);
 
-export { Product, Cart, Order, Payment };
+export {User, Product, Cart, Order, Payment };

@@ -21,7 +21,7 @@ const SingleProductPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get(
-        `http://localhost:2000/api/Product/${productId}`
+        `https://doviee-api.vercel.app/api/Product/${productId}`
       );
       setProduct(data);
     };

@@ -3,9 +3,9 @@ import Footer from "../Components/Footer";
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import CartContext from "../context/cart/CartContext";
-import { useNavigate } from "react-router-dom";
 
 function Login() {
+
   var signUpStyle = { color: "", background: "" };
   var loginStyle = { color: "", background: "" };
 
@@ -38,40 +38,30 @@ function Login() {
     setSignUpFormData((prevData) => ({ ...prevData, [name]: value }));
   }
 
-  const handleSignUpSubmit = async (event) => {
+  function handleSignUpSubmit(event) {
     event.preventDefault();
 
-    axios
-      .post("http://localhost:2000/api/signup", signUpFormData)
-      .then((response) => {
-        if (response.status === 201) {
-          console.log(response.data.message);
-          alert("User registration successful. Please proceed to login.");
-          window.location.href = "/Login";
-        } else {
-          console.log(response.data.message);
-        }
+    axios({
+      method: "POST",
+      data: signUpFormData,
+      withCredentials: true,
+      url: "https://doviee-api.vercel.app/api/signup"
+    })
+      .then(function(res){
+        alert(res.data);
+        window.location.href="/Login";
       })
       .catch((error) => {
-        console.error("An error occurred during user registration:", error);
-        if (
-          error.response &&
-          error.response.data &&
-          error.response.data.message
-        ) {
-          alert(error.response.data.message);
-        } else {
-          alert(
-            "An error occurred during user registration. Please try again."
-          );
-        }
+        console.error(error);
       });
-  };
+  }
+  
+
   // LOGIN
-  const { login, userInformation } = useContext(CartContext);
-  const navigate = useNavigate();
+  const { login, userInformation, isLoggedIn, userInfo } = useContext(CartContext);
+
   let [loginFormData, setLoginFormData] = useState({
-    email: "",
+    username: "",
     password: "",
     remember: false,
   });
@@ -83,23 +73,31 @@ function Login() {
     console.log(loginFormData);
   }
 
-  const handleloginSubmit = async (event) => {
+  function handleloginSubmit(event){
     event.preventDefault();
 
-    axios
-      .post("http://localhost:2000/api/login", loginFormData)
-      .then((response) => {
-        if (response.status === 201) {
-          console.log(response.data.message);
-          alert("successful login.");
-        } else {
-          console.log(response.data.message);
-        }
-      })
-      .catch((error) => {
-        console.error("An error occurred while logging in:", error);
-        alert("An error occurred while logging in");
-      });
+    axios({
+      method:"POST",
+      data: loginFormData,
+      withCredentials: true,
+      url:"https://doviee-api.vercel.app/api/login"
+    })
+    .then(function(res){
+      console.log(res);
+      if(res.data==="No User Exists"){
+        alert("Wrong Credentials");
+      }else{
+        login();
+        userInformation(res.data);
+        window.location.href="Categories/all"; 
+      }
+ 
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+    console.log(isLoggedIn);
+    console.log(userInfo);
   };
 
   return (
@@ -121,8 +119,8 @@ function Login() {
               <label className="labelL">Email</label>
               <input
                 onChange={handleLoginInputChange}
-                value={loginFormData.email}
-                name="email"
+                value={loginFormData.username}
+                name="username"
                 className="inputL"
               ></input>
               <label className="labelL">Password</label>
@@ -146,7 +144,7 @@ function Login() {
               <button type="submit" className="buttonL">
                 Login
               </button>
-              <a href="#" className="aL">
+              <a href="/Login" className="aL">
                 <p className="pL">Forgot Password?</p>
               </a>
             </form>
@@ -189,7 +187,7 @@ function Login() {
           )}
         </div>
         <div className="imgD">
-          <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685485471/doviee/tamara-bellis-cvfHyRTBepA-unsplash_xc7t8q.jpg" />
+          <img alt="img" src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685485471/doviee/tamara-bellis-cvfHyRTBepA-unsplash_xc7t8q.jpg" />
         </div>
       </div>
       <Footer />
