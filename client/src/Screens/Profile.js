@@ -21,9 +21,12 @@ function Profile() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("http://localhost:2000/api/User", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://doviee-api.vercel.app/api/User",
+          {
+            withCredentials: true,
+          }
+        );
 
         if (response.status === 200) {
           login();
@@ -52,7 +55,7 @@ function Profile() {
       method: "POST",
       data: { edPhoneNumber, edAddress, initiatingUser },
       withCredentials: true,
-      url: "http://localhost:2000/api/edit-info",
+      url: "https://doviee-api.vercel.app/api/edit-info",
     })
       .then(function (res) {
         // window.location.reload();

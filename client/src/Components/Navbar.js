@@ -12,9 +12,12 @@ function Navbar(props) {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("http://localhost:2000/api/User", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://doviee-api.vercel.app/api/User",
+          {
+            withCredentials: true,
+          }
+        );
         if (response.status === 200) {
           login();
           userInformation(response.data);
@@ -31,7 +34,7 @@ function Navbar(props) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:2000/api/logout",
+      url: "https://doviee-api.vercel.app/api/logout",
     })
       .then(function () {
         logout();

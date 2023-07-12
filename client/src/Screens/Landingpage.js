@@ -7,7 +7,7 @@ import Card from "../Components/Card";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
 import axios from "axios";
-import { BrownBtn, BoarderBrownBtn } from "../Components/Btns";
+import { BrownBtn } from "../Components/Btns";
 
 function Landingpage() {
   const navigate = useNavigate();
@@ -35,7 +35,9 @@ function Landingpage() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("http://localhost:2000/api/Products");
+      const { data } = await axios.get(
+        "https://doviee-api.vercel.app/api/Products"
+      );
       setProducts(data);
     };
     fetchProducts();
@@ -62,8 +64,7 @@ function Landingpage() {
           placeholder="Search products"
           className="search"
           value={searchInput}
-          onChange={handleSearchInput}
-        ></input>
+          onChange={handleSearchInput}></input>
         <button type="submit" className="search-btn">
           <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685206701/doviee/icons/search-line_umfkmq.png" />
         </button>

@@ -5,7 +5,6 @@ import axios from "axios";
 import CartContext from "../context/cart/CartContext";
 
 function Login() {
-
   var signUpStyle = { color: "", background: "" };
   var loginStyle = { color: "", background: "" };
 
@@ -45,20 +44,20 @@ function Login() {
       method: "POST",
       data: signUpFormData,
       withCredentials: true,
-      url: "http://localhost:2000/api/signup"
+      url: "https://doviee-api.vercel.app/api/signup",
     })
-      .then(function(res){
+      .then(function (res) {
         alert(res.data);
-        window.location.href="/Login";
+        window.location.href = "/Login";
       })
       .catch((error) => {
         console.error(error);
       });
   }
-  
 
   // LOGIN
-  const { login, userInformation, isLoggedIn, userInfo } = useContext(CartContext);
+  const { login, userInformation, isLoggedIn, userInfo } =
+    useContext(CartContext);
 
   let [loginFormData, setLoginFormData] = useState({
     username: "",
@@ -73,32 +72,31 @@ function Login() {
     console.log(loginFormData);
   }
 
-  function handleloginSubmit(event){
+  function handleloginSubmit(event) {
     event.preventDefault();
 
     axios({
-      method:"POST",
+      method: "POST",
       data: loginFormData,
       withCredentials: true,
-      url:"http://localhost:2000/api/login"
+      url: "https://doviee-api.vercel.app/api/login",
     })
-    .then(function(res){
-      console.log(res);
-      if(res.data==="No User Exists"){
-        alert("Wrong Credentials");
-      }else{
-        login();
-        userInformation(res.data);
-        window.location.href="Categories/all"; 
-      }
- 
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+      .then(function (res) {
+        console.log(res);
+        if (res.data === "No User Exists") {
+          alert("Wrong Credentials");
+        } else {
+          login();
+          userInformation(res.data);
+          window.location.href = "Categories/all";
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
     console.log(isLoggedIn);
     console.log(userInfo);
-  };
+  }
 
   return (
     <div className="Cont">
@@ -121,16 +119,14 @@ function Login() {
                 onChange={handleLoginInputChange}
                 value={loginFormData.username}
                 name="username"
-                className="inputL"
-              ></input>
+                className="inputL"></input>
               <label className="labelL">Password</label>
               <input
                 onChange={handleLoginInputChange}
                 value={loginFormData.password}
                 type="password"
                 name="password"
-                className="inputL"
-              ></input>
+                className="inputL"></input>
               <p className="pL">
                 <input
                   onChange={handleLoginInputChange}
@@ -156,30 +152,26 @@ function Login() {
                 onChange={handleSignUpInputChange}
                 value={signUpFormData.fName}
                 name="fName"
-                className="inputL"
-              ></input>
+                className="inputL"></input>
               <label className="labelL">Last name</label>
               <input
                 onChange={handleSignUpInputChange}
                 value={signUpFormData.lName}
                 name="lName"
-                className="inputL"
-              ></input>
+                className="inputL"></input>
               <label className="labelL">Email</label>
               <input
                 onChange={handleSignUpInputChange}
                 value={signUpFormData.email}
                 name="email"
-                className="inputL"
-              ></input>
+                className="inputL"></input>
               <label className="labelL">Password</label>
               <input
                 onChange={handleSignUpInputChange}
                 type="password"
                 value={signUpFormData.password}
                 name="password"
-                className="inputL"
-              ></input>
+                className="inputL"></input>
               <button type="submit" className="buttonL">
                 Sign up
               </button>
@@ -187,7 +179,10 @@ function Login() {
           )}
         </div>
         <div className="imgD">
-          <img alt="img" src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685485471/doviee/tamara-bellis-cvfHyRTBepA-unsplash_xc7t8q.jpg" />
+          <img
+            alt="img"
+            src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685485471/doviee/tamara-bellis-cvfHyRTBepA-unsplash_xc7t8q.jpg"
+          />
         </div>
       </div>
       <Footer />

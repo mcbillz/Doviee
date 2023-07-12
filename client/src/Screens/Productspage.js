@@ -6,12 +6,12 @@ import Footer from "../Components/Footer";
 import Card from "../Components/Card";
 import axios from "axios";
 import Error from "../Components/Error";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Productspage() {
   const { searchInput } = useParams();
   const [Products, setProducts] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(searchInput || ""); 
+  const [searchQuery, setSearchQuery] = useState(searchInput || "");
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function Productspage() {
       axios({
         method: "GET",
         withCredentials: true,
-        url: "http://localhost:2000/api/Products"
+        url: "https://doviee-api.vercel.app/api/Products",
       })
         .then(function (res) {
           setProducts(res.data);
@@ -84,8 +84,7 @@ function Productspage() {
           placeholder="Search products"
           className="search"
           value={searchQuery}
-          onChange={handleSearchInput}
-        ></input>
+          onChange={handleSearchInput}></input>
         <button disabled className="search-btn">
           <img src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685206701/doviee/icons/search-line_umfkmq.png" />
         </button>
