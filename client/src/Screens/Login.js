@@ -45,7 +45,7 @@ function Login() {
       method: "POST",
       data: signUpFormData,
       withCredentials: true,
-      url: "https://doviee-api.vercel.app/api/signup"
+      url: "http://localhost:2000/api/signup"
     })
       .then(function(res){
         alert(res.data);
@@ -80,7 +80,7 @@ function Login() {
       method:"POST",
       data: loginFormData,
       withCredentials: true,
-      url:"https://doviee-api.vercel.app/api/login"
+      url:"http://localhost:2000/api/login"
     })
     .then(function(res){
       console.log(res);

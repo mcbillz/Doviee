@@ -18,18 +18,23 @@ const SingleProductPage = () => {
 
   const [product, setProduct] = useState({});
 
+  const [formData, setFormData] = useState({
+    quantity: 1,
+    size: "",
+    color: "",
+  });
+  const [netPrice, setNetPrice] = useState(0);
+
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get(
-        `https://doviee-api.vercel.app/api/Product/${productId}`
+        `http://localhost:2000/api/Product/${productId}`
       );
       setProduct(data);
+      setNetPrice(data.price);
     };
     fetchProducts();
   }, [productId]);
-
-  let [formData, setFormData] = useState({ quantity: 1, size: "", color: "" });
-  let [netPrice, setNetPrice] = useState(formData.quantity * product.price);
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -54,7 +59,6 @@ const SingleProductPage = () => {
   if (!product) {
     return <Error errorMessage="Sorry, Product not found!" />;
   }
-  console.log(product);
 
   return (
     <div className="cont">
@@ -79,8 +83,7 @@ const SingleProductPage = () => {
           </h3>
           <form
             className="order-spec"
-            onSubmit={(event) => addToCart(product, event, formData, netPrice)}
-          >
+            onSubmit={(event) => addToCart(product, event, formData, netPrice)}>
             <button className="increase" onClick={handleIncrease}>
               +
             </button>
@@ -99,12 +102,11 @@ const SingleProductPage = () => {
               name="size"
               className="sizes"
               value={formData.size}
-              onChange={handleInputChange}
-            >
+              onChange={handleInputChange}>
               <option disabled selected className="size-option">
                 Size
               </option>
-              {product?.size?.map((size, index) => (
+              {product?.sizes?.map((size, index) => (
                 <option key={index} className="size-option">
                   {size}
                 </option>
@@ -114,8 +116,7 @@ const SingleProductPage = () => {
               name="colour"
               className="colours"
               value={formData.color}
-              onChange={handleInputChange}
-            >
+              onChange={handleInputChange}>
               <option disabled selected className="colour-option">
                 Color
               </option>
@@ -134,8 +135,7 @@ const SingleProductPage = () => {
                 style={{ backgroundColor: "gray" }}
                 disabled
                 className="add-to-cart"
-                type="submit"
-              >
+                type="submit">
                 Out of stock
               </button>
             )}

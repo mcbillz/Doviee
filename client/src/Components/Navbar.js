@@ -1,11 +1,46 @@
-import { React, useState, useContext } from "react";
+import { React, useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../CSS/Navbar.css";
 import CartContext from "../context/cart/CartContext";
+import axios from "axios";
 
 function Navbar(props) {
-  const { cartItems, isLoggedIn, userInfo } = useContext(CartContext);
+  const { login, logout, userInformation, cartItems, isLoggedIn, userInfo } =
+    useContext(CartContext);
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get("http://localhost:2000/api/User", {
+          withCredentials: true,
+        });
+        if (response.status === 200) {
+          login();
+          userInformation(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  function handleLogout() {
+    axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:2000/api/logout",
+    })
+      .then(function () {
+        logout();
+        userInformation({});
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   let mobilenavStyle = {};
   if (toggle === true) {
@@ -44,6 +79,7 @@ function Navbar(props) {
         <div className="nav-mid">
           <a href="/">
             <img
+              alt="img"
               className="nav-logo"
               src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685205592/doviee/doviee_wu9jrs.png"
             />
@@ -60,18 +96,21 @@ function Navbar(props) {
             <button class="dropdown-btn">User</button>
             <div class="dropdown-content">
               {isLoggedIn ? (
-                <Link to="/Profile">{userInfo.firstName}</Link>
-              ) : (
                 <div>
-                  <Link to="/Login">Login</Link>
-                  <Link to="/">Logout</Link>
+                  <Link to="/Profile">{userInfo.firstName}</Link>
+                  <Link to="/" onClick={handleLogout}>
+                    Logout
+                  </Link>
                 </div>
+              ) : (
+                <Link to="/Login">Login</Link>
               )}
             </div>
           </div>
           <div>
             <a href="/Cart" id="cart">
               <img
+                alt="img"
                 id="cart-img"
                 src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685203944/doviee/icons/shopping-cart-2-line_c3dvo5.png"
               />
@@ -105,12 +144,12 @@ function Navbar(props) {
               <button class="dropdown-btn">User</button>
               <div class="dropdown-content">
                 {isLoggedIn ? (
-                  <Link to="/Profile">{userInfo.firstName}</Link>
-                ) : (
                   <div>
-                    <Link to="/Login">Login</Link>
+                    <Link to="/Profile">{userInfo.firstName}</Link>
                     <Link to="/">Logout</Link>
                   </div>
+                ) : (
+                  <Link to="/Login">Login</Link>
                 )}
               </div>
             </div>

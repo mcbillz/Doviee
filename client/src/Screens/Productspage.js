@@ -19,7 +19,7 @@ function Productspage() {
       axios({
         method: "GET",
         withCredentials: true,
-        url: "https://doviee-api.vercel.app/api/Products"
+        url: "http://localhost:2000/api/Products"
       })
         .then(function (res) {
           setProducts(res.data);

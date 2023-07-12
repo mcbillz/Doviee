@@ -31,11 +31,6 @@ const productSchema = new mongoose.Schema({
 });
 const Product = mongoose.model("Product", productSchema);
 
-const cartSchema = new mongoose.Schema({
-  cartItem: [productSchema],
-});
-const Cart = mongoose.model("Cart", cartSchema);
-
 const orderSchema = new mongoose.Schema({
   orderId: Number,
   username: String,
@@ -57,4 +52,4 @@ const paymentSchema = new mongoose.Schema({
 });
 const Payment = mongoose.model("Payment", paymentSchema);
 
-export {User, Product, Cart, Order, Payment };
+export { User, Product, Order, Payment };

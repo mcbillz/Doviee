@@ -13,12 +13,24 @@ import {
 const CartState = ({ children }) => {
   const initialState = {
     showCart: false,
-    cartItems: [],
-    isLoggedIn: false,
-    userInfo: null,
+    cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
+    isLoggedIn: localStorage.getItem("isLoggedIn") === false,
+    userInfo: JSON.parse(localStorage.getItem("userInfo")) || null,
   };
 
   const [state, dispatch] = useReducer(CartReducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+  }, [state.cartItems]);
+
+  useEffect(() => {
+    localStorage.setItem("isLoggedIn", state.isLoggedIn);
+  }, [state.isLoggedIn]);
+
+  useEffect(() => {
+    localStorage.setItem("userInfo", JSON.stringify(state.userInfo));
+  }, [state.userInfo]);
 
   const userInformation = (theInformation) => {
     dispatch({ type: USER_INFO, payload: theInformation });
@@ -38,8 +50,8 @@ const CartState = ({ children }) => {
     dispatch({ type: SHOW_HIDE_CART });
   };
 
-  const removeItem = (id) => {
-    dispatch({ type: REMOVE_ITEM, payload: id });
+  const removeItem = (index) => {
+    dispatch({ type: REMOVE_ITEM, payload: index });
   };
 
   const logout = () => {
@@ -59,8 +71,7 @@ const CartState = ({ children }) => {
         userInformation,
         login,
         logout,
-      }}
-    >
+      }}>
       {children}
     </CartContext.Provider>
   );

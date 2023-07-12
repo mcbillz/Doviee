@@ -22,7 +22,9 @@ function Cart() {
         {cartItems.length === 0 ? (
           <Error errorMessage="Sorry, Your cart is Empty" />
         ) : (
-          cartItems.map((item) => <CartItem key={item.id} item={item} />)
+          cartItems.map((item, index) => (
+            <CartItem key={item.id} index={index} item={item} />
+          ))
         )}
       </div>
       {cartItems.length === 0 ? (

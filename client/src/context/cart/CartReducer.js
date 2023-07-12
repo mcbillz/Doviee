@@ -22,27 +22,31 @@ const CartReducer = (state, action) => {
       };
     }
     case REMOVE_ITEM: {
+      const indexToRemove = action.payload;
+      const updatedCartItems = [...state.cartItems];
+      updatedCartItems.splice(indexToRemove, 1);
       return {
         ...state,
-        cartItems: state.cartItems.filter((item) => item.id !== action.payload),
+        cartItems: updatedCartItems,
       };
     }
     case USER_INFO: {
       return {
         ...state,
-        userInfo: [action.payload],
+        userInfo: action.payload,
       };
     }
     case LOG: {
       return {
         ...state,
-        isLoggedIn: !state.isLoggedIn,
+        isLoggedIn: true,
       };
     }
     case LOGOUT: {
       return {
         ...state,
         isLoggedIn: false,
+        userInfo: null,
       };
     }
 

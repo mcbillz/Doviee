@@ -3,9 +3,10 @@ import "../CSS/CartItem.css";
 import CartContext from "../context/cart/CartContext";
 import formatCurrency from "format-currency";
 
-function CartItem({ item }) {
+function CartItem({ item, index }) {
   const { removeItem } = useContext(CartContext);
   let opts = { format: "%s%v", symbol: "$" };
+  console.log(item);
   return (
     <div className="cart-item-div">
       <div>
@@ -24,7 +25,7 @@ function CartItem({ item }) {
         <h2>{formatCurrency(`${item.netPrice}`, opts)}</h2>
       </div>
 
-      <button className="cart-item-remove" onClick={() => removeItem(item.id)}>
+      <button className="cart-item-remove" onClick={() => removeItem(index)}>
         <img
           src="https://res.cloudinary.com/dp6afxo4t/image/upload/v1685887032/doviee/close-circle-line_ltmeep.png"
           alt="product image"
