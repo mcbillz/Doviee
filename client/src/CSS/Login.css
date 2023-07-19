@@ -1,0 +1,92 @@
+.Cont {
+  background: #fefcf3;
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0 0;
+}
+.login {
+  background: #f5ede6;
+  width: 900px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+}
+.infos {
+  width: 50%;
+}
+.info-btn button {
+  width: 50%;
+  height: 50px;
+  border-style: none;
+  font-size: large;
+  font-family: "Ysabeau", sans-serif;
+}
+.imgD {
+  width: 50%;
+  overflow: hidden;
+}
+.imgD img {
+  width: 100%;
+  filter: grayscale(100%);
+}
+.formL {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3vw;
+}
+.labelL,
+.pL {
+  font-size: 16px;
+  padding: 10px 0;
+  margin: 0;
+}
+.buttonL {
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 100;
+  border: none;
+  cursor: pointer;
+  padding: 0px 10px;
+  color: #e1cbbf;
+  background: #846d61;
+  margin: 15px 0 10px;
+}
+.inputL {
+  background-color: #fefcf3;
+  border-style: none;
+  font-size: 16px;
+  height: 26px;
+  font-weight: 100;
+}
+.aL {
+  margin: 10px 0 0;
+}
+.ck {
+  background-color: #fefcf3;
+  border-style: none;
+}
+.ck:checked {
+  background-color: #846d61;
+}
+@media screen and (max-width: 1100px) {
+  .login {
+    background: #f5ede6;
+    width: 60vw;
+    min-width: 300px;
+  }
+  .infos {
+    width: 100%;
+  }
+  .imgD {
+    display: none;
+  }
+}
+@media screen and (max-width: 850px) {
+  .login {
+    width: 80vw;
+  }
+}

@@ -1,0 +1,19 @@
+.slider {
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.slider-image {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  max-width: 100%;
+  height: auto;
+}
+
+.slider-image.active {
+  opacity: 1;
+}

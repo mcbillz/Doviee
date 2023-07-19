@@ -1,0 +1,52 @@
+.brown-btn {
+  gap: 10px;
+  width: 260px;
+  height: 100px;
+  font-size: 3rem;
+  font-weight: 100;
+  border: none;
+  cursor: pointer;
+  padding: 0px 10px;
+  color: #e1cbbf;
+  background: #846d61;
+}
+.boarder-brown-btn {
+  gap: 10px;
+  width: 260px;
+  height: 100px;
+  font-size: 3rem;
+  font-weight: 100;
+  cursor: pointer;
+  background: none;
+  color: #846d61;
+  border: 1px solid #846d61;
+  padding: 0px 10px;
+}
+@media screen and (max-width: 1300px) {
+  .brown-btn {
+    width: 160px;
+    height: 48px;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+  .boarder-brown-btn {
+    width: 160px;
+    height: 48px;
+    font-size: 1.5rem;
+    font-weight: 1002;
+  }
+}
+@media screen and (max-width: 700px) {
+  .brown-btn {
+    width: 80px;
+    height: 24px;
+    font-size: 0.5rem;
+    font-weight: 100;
+  }
+  .boarder-brown-btn {
+    width: 80px;
+    height: 24px;
+    font-size: 0.5rem;
+    font-weight: 100;
+  }
+}

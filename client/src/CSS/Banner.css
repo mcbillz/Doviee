@@ -1,0 +1,53 @@
+.advert-banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ad {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ad img {
+  width: 100%;
+  display: block;
+}
+
+.shop-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f00;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (min-width: 1300px) {
+  .advert-banner {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .advert-banner {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 850px) {
+  .advert-banner {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .advert-banner {
+    max-width: 90%;
+  }
+}

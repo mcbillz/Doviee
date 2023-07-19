@@ -1,0 +1,127 @@
+.footer-div {
+  margin: 150px 0 0;
+  padding: 5px 96px;
+  background: #f5ede6;
+}
+.footer-div-1 {
+  width: 955px;
+  height: 286px;
+  background: #262424;
+  border-radius: 8px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer-div-1 h1 {
+  color: white;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+}
+.footer-div-1 p {
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.7);
+}
+.footer-div-1 button {
+  color: white;
+  background: #c9a26b;
+  padding: 0px 10px;
+  margin-top: 20px;
+  width: 290px;
+  height: 48px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+}
+.footer-list {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.footer-list div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-right: 20px;
+}
+.footer-list div h5 {
+  margin: 0;
+}
+.footer-list p {
+  color: rgba(36, 35, 34, 0.7);
+}
+
+.footer-list-a p {
+  padding-right: 100px;
+}
+.footer-list-a img {
+  height: 50px;
+  margin: 0;
+}
+.footer-div-3 {
+  color: rgba(36, 35, 34, 0.7);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+hr {
+  border: 1px solid #ecedef;
+}
+@media screen and (max-width: 750px) {
+  .footer-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+  }
+  .footer-div {
+    margin-top: 30px;
+    padding: 10px 20px;
+  }
+  .footer-list-a p {
+    padding-right: 100px;
+  }
+  .footer-list p {
+    line-height: 150%;
+    font-size: 14px;
+  }
+  .footer-list div h5 {
+    margin: 0;
+    font-size: 17px;
+  }
+  .footer-list-a img {
+    height: 70px;
+    margin: 0;
+  }
+  .footer-div-1 button {
+    width: 200px;
+    border-style: none;
+  }
+  .footer-div-3 p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .footer-div-1 {
+    width: 100%;
+    max-width: 955px;
+    height: 286px;
+    margin: 30px auto 80px;
+  }
+  .footer-div-1 p {
+    padding: 0 20px;
+    font-size: 14px;
+  }
+  .footer-div-1 h1 {
+    font-size: 18px;
+  }
+}
